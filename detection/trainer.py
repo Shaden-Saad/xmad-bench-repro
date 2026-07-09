@@ -24,7 +24,7 @@ class Trainer:
         running_loss = []
         self.network.train()
         for idx, (inputs, labels) in enumerate(self.train_dataloader, 0):
-            inputs = inputs.to(self.config['device']).float()
+            inputs = inputs.float().to(self.config['device'])
             labels = labels.to(self.config['device']).long()
 
             predictions = self.network(inputs)
@@ -53,7 +53,7 @@ class Trainer:
         running_eval_loss = 0.0
         self.network.eval()
         for idx, (inputs, labels) in enumerate(self.eval_dataloader):
-            inputs = inputs.to(self.config['device']).float()
+            inputs = inputs.float().to(self.config['device'])
             labels = labels.to(self.config['device']).long()
 
             predictions = self.network(inputs)
@@ -81,7 +81,7 @@ class Trainer:
             checkpoint = torch.load(os.path.join(self.config['exp_path'],
                                                  self.config['exp_name'],
                                                  'latest_checkpoint.pkl'),
-                                    map_location=self.config['device'])
+                                    map_location=self.config['device'], weights_only=False)
             self.network.load_state_dict(checkpoint['model_weights'])
             self.optimizer.load_state_dict(checkpoint['optimizer'])
 
@@ -126,7 +126,7 @@ class Trainer:
     @torch.no_grad()
     def test_out_of_domain(self, dataloader):
         checkpoint = torch.load(os.path.join(self.config['exp_path'], self.config['exp_name'], 'best_model.pkl'),
-                                map_location=self.config['device'])
+                                map_location=self.config['device'], weights_only=False)
         self.network.load_state_dict(checkpoint['model_weights'])
         self.network.eval()
 
@@ -134,7 +134,7 @@ class Trainer:
         stats_predictions = []
 
         for idx, (inputs, labels) in enumerate(dataloader):
-            inputs = inputs.to(self.config['device']).float()
+            inputs = inputs.float().to(self.config['device'])
             labels = labels.to(self.config['device']).long()
 
             predictions = self.network(inputs)

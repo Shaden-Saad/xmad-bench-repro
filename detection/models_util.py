@@ -1,8 +1,8 @@
 from torchvision.models.resnet import resnet18, ResNet18_Weights, resnet50, ResNet50_Weights
 import torch
 
-from detection.septr import SeparableTr
-from detection.ast_model import ASTModelLocal
+from septr import SeparableTr
+from ast_model import ASTModelLocal
 
 
 def get_resnet18_model(config):

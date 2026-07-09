@@ -1,20 +1,20 @@
 {
-  "exp_name": "de_resnet50_r1",
+  "exp_name": "ru_resnet18",
   "exp_path": "./experiments",
-  "about_experiment": "German first test",
+  "about_experiment": "XMAD-Bench Step B repro",
   "dataset": {
-    "root_path": "/Users/r02sa25/Downloads/de",
-    "dataset_train": "commonvoice-de",
-    "dataset_test": "mailabs-de",
+    "root_path": "/path/to/data",
+    "dataset_train": "commonvoice-ru",
+    "dataset_test": "mailabs-ru",
     "multilingual": true,
     "train_datasets": [
-      "commonvoice-de"
+      "commonvoice-ru"
     ],
     "test_datasets": [
-      "mailabs-de"
+      "mailabs-ru"
     ],
     "extract_samples": false,
-    "num_samples": 1000,
+    "num_samples": 4000,
     "augment_chance": 0.5,
     "noise_augment": true,
     "noise_augment_chance": 0.0,
@@ -40,12 +40,12 @@
     "pitch": true,
     "pitch_augment_chance": 0.2
   },
-  "model_type": "resnet50",
+  "model_type": "resnet18",
   "lr": 0.0005,
   "lr_sch_step": 50,
   "lr_sch_gamma": 0.5,
   "weight_decay": 0.0,
-  "batch_size": 32,
+  "batch_size": 200,
   "loss_function": "bce_loss",
   "train_epochs": 20,
   "eval_net_epoch": 1,

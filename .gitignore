@@ -172,3 +172,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+*.zip
+experiments/
+repro_tools/**/*.xlsx
