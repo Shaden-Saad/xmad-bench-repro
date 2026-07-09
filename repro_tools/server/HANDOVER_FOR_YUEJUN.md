@@ -45,6 +45,26 @@ bash repro_tools/server/1_setup_cuda_env.sh
 If `nvidia-smi` shows a CUDA version other than 12.1, edit the `cu121` in that
 script (e.g. `cu118`, `cu124`) before running. Success prints `CUDA available: True`.
 
+**4b. Download the dataset (~80 GB) — directly onto the server.**
+The data is publicly linked from the paper's GitHub README, so it can be pulled
+straight from Google Drive to the server (no need to transfer via anyone's laptop).
+```
+pip install gdown
+mkdir -p ~/xmad_data/_zips && cd ~/xmad_data/_zips
+gdown --folder https://drive.google.com/drive/folders/1PjboiIGjNWU6UeuIHrZu3ofF70o0A5-X
+```
+This downloads all the language ZIPs (ar, de, en, es, ro, ru, zh-cn) plus the EULA.
+
+Fallbacks if Google throttles a large file ("quota exceeded" / "too many users"):
+- Sign in / use the folder shared to your account, then retry (avoids anonymous limits).
+- Download a single big file by its Drive ID (right-click file -> Share -> copy link
+  -> the ID is the long string in the URL):
+  `gdown --id <FILE_ID> -O en.zip`
+- Or `pip install "gdown>=5"` and retry; newer gdown handles Drive confirmations better.
+
+Licence note: the data is CC BY-NC-SA 4.0 (non-commercial research) with an EULA
+(EULA_form_S.pdf in the folder) — keep it on LIST storage only, don't redistribute.
+
 **5. Stage the data into ONE folder:**
 ```
 bash repro_tools/server/2_prepare_data.sh ~/xmad_data
