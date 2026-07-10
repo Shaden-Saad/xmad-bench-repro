@@ -77,22 +77,52 @@ commonvoice-zh, aishell-3, commonvoice-ro, voxpopuli, commonvoice-ru, mailabs-ru
 commonvoice-es, mailabs-es`. If any differ, edit the mapping at the top of
 `repro_tools/stepB/make_configs.py` to match, and let Shaden know.
 
-**6. Run the sweep** (restores the paper's per-model batch sizes automatically):
-- SLURM:  edit partition/time in `repro_tools/server/slurm_job.sh`, then `sbatch repro_tools/server/slurm_job.sh`
-- Plain box (use tmux so it survives disconnects):
+**6. Run the sweep.** The scripts restore the paper's per-model batch sizes and
+auto-detect the models (4 wired; 6 if the SSL models were added). Pick the option
+that matches how you want to use the GPUs:
+
+*Option A — everything on one GPU (simplest):*
 ```
 tmux new -s sweep
-source ~/xmad-env/bin/activate
 bash repro_tools/server/3_run_full_sweep.sh ~/xmad-bench ~/xmad_data
-# detach: Ctrl-b then d   |   reattach: tmux attach -t sweep
+# detach: Ctrl-b then d ; reattach: tmux attach -t sweep
 ```
 
+*Option B — split the 7 languages across two nodes (your plan: 4 + 3).*
+Give each node a subset of languages (3rd argument) and a tag (4th argument):
+```
+# on node 1:
+CUDA_VISIBLE_DEVICES=0 bash repro_tools/server/3_run_full_sweep.sh ~/xmad-bench ~/xmad_data "ar en de zh" node1
+# on node 2:
+CUDA_VISIBLE_DEVICES=0 bash repro_tools/server/3_run_full_sweep.sh ~/xmad-bench ~/xmad_data "ro ru es" node2
+```
+Each writes its own `results_<tag>.csv`.
+
+*Option C — one language per GPU, in parallel on a node.*
+Assigns language 1 -> GPU 0, language 2 -> GPU 1, etc.:
+```
+# node 1 (4 GPUs):
+bash repro_tools/server/run_per_language_gpu.sh ~/xmad-bench ~/xmad_data ar en de zh
+# node 2 (3 GPUs):
+bash repro_tools/server/run_per_language_gpu.sh ~/xmad-bench ~/xmad_data ro ru es
+```
+Each language writes `results_<lang>.csv` + `log_<lang>.txt`.
+
+*(SLURM alternative:* edit partition/time in `repro_tools/server/slurm_job.sh`,
+then `sbatch repro_tools/server/slurm_job.sh` — by default it runs the whole sweep;
+change the languages/tag inside it to submit per-node jobs.)
+
+Parallel runs are safe: each run uses its own config file and unique experiment
+name, so nothing is shared or overwritten between GPUs.
+
 ## What to send back
-- The results file: `~/xmad-bench/results_full_sweep.csv`
-  (per run: exp_name, model, train, test, in/cross ACC/AUC/EER as fractions).
+- The per-run results CSV(s): `results_full_sweep.csv` (Option A) or the
+  `results_<tag>.csv` / `results_<lang>.csv` files (Options B/C).
+  Columns: exp_name, model, train, test, in/cross ACC/AUC/EER (as fractions).
+- Combine per-language/-node files with:
+  `awk 'FNR==1 && NR!=1{next} {print}' results_*.csv > results_full_sweep.csv`
 - Optionally the per-run logs/checkpoints under `detection/experiments/`.
-Send `results_full_sweep.csv` to Shaden; that's all that's needed to fill the
-comparison tables.
+Send the results CSV(s) to Shaden; that's all that's needed to fill the tables.
 
 ## If something errors
 Common issues and fixes are documented in `repro_tools/stepB/CODE_FIXES_APPLIED.md`.

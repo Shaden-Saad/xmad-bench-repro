@@ -1,11 +1,11 @@
 # Message to send Yuejun
 
-Subject: XMAD-Bench reproduction — run on LIST GPU
+Subject: XMAD-Bench reproduction — run on the GPU server
 
 Hi Yuejun,
 
-Thanks for helping run this on the LIST GPU server. Everything is prepared — code
-and scripts are on GitHub:
+Thanks for helping run this on the GPU server we've been granted access to.
+Everything is prepared — code and scripts are on GitHub (public repo):
 
   https://github.com/Shaden-Saad/xmad-bench-repro   (branch: reproduction)
 
@@ -17,19 +17,17 @@ In short:
   2. Run the three numbered scripts in repro_tools/server/ (environment -> data -> sweep).
   3. Send me back the file it produces: results_full_sweep.csv
 
-Scope of this run: 7 languages x 4 models (ResNet-18, ResNet-50, SepTr, AST) x 3 runs.
-(Two more models — wav2vec2 and Whisper+MLP — are not in the released code; I'll add
-those in a second round, so they're out of scope for now.)
-Estimated compute: roughly 50-110 GPU-hours in total.
+Scope: 7 languages x 4 models (ResNet-18, ResNet-50, SepTr, AST) x 3 runs
+(~50-110 GPU-hours). I'm adding two more models (wav2vec2, Whisper+MLP) shortly —
+I'll let you know if they're ready before you start; otherwise we'll do them in a
+second round.
 
-Two things to sort at the start:
-  - Dataset (~80 GB): you'll need the seven language ZIPs. I can share the Google
-    Drive folder or send the zips — tell me which you prefer.
-  - Two spots adapt to LIST: the CUDA version (step 4) and, if LIST uses SLURM, the
-    partition name (step 6). The guide explains exactly where.
+The dataset (~80 GB) downloads directly onto the server from this link — the guide
+has the exact command:
+  https://drive.google.com/drive/folders/1PjboiIGjNWU6UeuIHrZu3ofF70o0A5-X
 
-If anything errors, send me the message and the folder-name list the data script
-prints — common fixes are noted in repro_tools/stepB/CODE_FIXES_APPLIED.md.
-
+Two spots adapt to the server (the CUDA version, and — if the server uses SLURM —
+the partition name); the guide explains where. Any errors, just send them my way.
 Thanks so much!
+
 Shaden

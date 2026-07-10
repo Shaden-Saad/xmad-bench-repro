@@ -50,12 +50,20 @@ def run_one(repo, cfg_path, repeat, results_writer, preflight):
             print(f"SKIP {cfg_path}: preflight failed")
             return
 
-    with open(os.path.join(det, "config.json"), "w") as f:
+    # Parallel-safe: each run gets its OWN config file (never the shared config.json),
+    # so several languages can run at once on different GPUs without clobbering it.
+    # main.py reads $CONFIG_PATH (falls back to ./config.json). Requires the one-line
+    # CONFIG_PATH patch applied to main.py (the run scripts apply it automatically).
+    cfg_dir = os.path.join(det, "_run_configs")
+    os.makedirs(cfg_dir, exist_ok=True)
+    cfg_file = os.path.join(cfg_dir, cfg["exp_name"] + ".json")
+    with open(cfg_file, "w") as f:
         json.dump(cfg, f, indent=2)
 
     # detection-only on PYTHONPATH (code is self-contained after the import fix;
-    # putting the repo root here would re-trigger the root utils.py collision)
-    env = dict(os.environ, PYTHONPATH=det)
+    # putting the repo root here would re-trigger the root utils.py collision).
+    # CUDA_VISIBLE_DEVICES is inherited from the environment (set it per GPU).
+    env = dict(os.environ, PYTHONPATH=det, CONFIG_PATH=cfg_file)
     print(f"\n=== RUN {cfg['exp_name']} (model={cfg['model_type']}) ===")
     proc = subprocess.run([sys.executable, "main.py"], cwd=det, env=env,
                           capture_output=True, text=True)
