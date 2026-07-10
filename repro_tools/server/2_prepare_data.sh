@@ -7,8 +7,8 @@
 # with `gdown` (installs via pip). You need each file's Drive ID, OR make your own copy.
 set -e
 
-DATA_ROOT="${1:-$HOME/xmad_data}"          # pass a path or default to ~/xmad_data
-mkdir -p "$DATA_ROOT/_zips" "$DATA_ROOT"
+DATA_ROOT="/project/home/p201284/guo/xmad_data"          # pass a path or default to ~/xmad_data
+# mkdir -p "$DATA_ROOT/_zips" "$DATA_ROOT"
 cd "$DATA_ROOT/_zips"
 
 echo "== Option A: download with gdown (fill in the Drive file IDs) =="
@@ -21,7 +21,10 @@ echo
 read -p "Press Enter once the language zips are in $DATA_ROOT/_zips ..."
 
 # Unzip everything
-for z in *.zip; do echo "unzip $z"; unzip -q -o "$z"; done
+###### Error happened when unzipping some files: error: invalid zip file with overlapped components (possible zip bomb). To unzip the file anyway, rerun the command with UNZIP_DISABLE_ZIPBOMB_DETECTION=TRUE environmnent variable
+# for z in *.zip; do echo "unzip $z"; unzip -q -o "$z"; done
+
+for z in *.zip; do echo "unzip $z"; UNZIP_DISABLE_ZIPBOMB_DETECTION=TRUE unzip -q -o "$z"; done
 
 # Flatten: move each real dataset folder up into DATA_ROOT (handles wrapper folders like de/, ar-005/)
 find . -maxdepth 3 -type d \( -name 'commonvoice-*' -o -name 'mailabs-*' -o -iname 'masc*' \
