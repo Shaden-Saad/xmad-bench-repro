@@ -9,7 +9,7 @@ REPO="${1:?give repo root, e.g. ~/xmad-bench}"
 DATA="${2:?give data root, e.g. ~/xmad_data}"
 STEPB="$REPO/repro_tools/stepB"     # helper scripts travel inside the repo (see guide, Part 1)
 
-source ~/xmad-env/bin/activate
+source venv/bin/activate
 
 # Restore the paper's per-model batch sizes for a GPU (make_configs already sets these:
 # resnet18=200, resnet50=120, septr=10, ast=10). num_workers can be higher on a server:
