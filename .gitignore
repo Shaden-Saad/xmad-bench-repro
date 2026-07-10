@@ -176,3 +176,8 @@ cython_debug/
 *.zip
 experiments/
 repro_tools/**/*.xlsx
+
+detection/runs/
+detection/_run_configs/
+__pycache__/
+*.pyc
