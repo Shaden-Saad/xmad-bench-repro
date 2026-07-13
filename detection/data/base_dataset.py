@@ -10,6 +10,22 @@ from pedalboard import Gain, Clipping, HighShelfFilter, LowShelfFilter, PitchShi
     Reverb, PeakFilter
 from transformers import ASTFeatureExtractor
 
+def _read_meta(path):
+    """Read a meta.csv, auto-detecting comma vs tab separation.
+
+    The released XMAD-Bench data is inconsistent: some meta.csv files are
+    tab-separated (e.g. commonvoice-ru) and others comma-separated (e.g.
+    commonvoice-en), while the original code hard-coded a tab separator for
+    exactly commonvoice-en/ru and mailabs-en/ru. That mismatch makes the
+    released code unable to load its own English data. Sniffing the header
+    is correct for either format.
+    """
+    with open(path, "r", encoding="utf-8", errors="replace") as _f:
+        _head = _f.readline()
+    _sep = "\t" if _head.count("\t") > _head.count(",") else ","
+    return pd.read_csv(path, sep=_sep)
+
+
 
 class BaseDataset(torch.utils.data.Dataset):
     def __init__(self, config, mode="train", ast_proc=False):
@@ -32,11 +48,11 @@ class BaseDataset(torch.utils.data.Dataset):
     def _process_dataset(self):
         dataset = self.config['dataset_train']
         if self.training:
-            meta = pd.read_csv(os.path.join(self.config['root_path'], dataset, "meta.csv"))
+            meta = _read_meta(os.path.join(self.config['root_path'], dataset, "meta.csv"))
             meta = meta[meta['split'] == "train"]
             meta["dir"] = meta['is_fake'].apply(lambda x: f'{dataset}/real' if x == 0 else f'{dataset}/fake')
         else:
-            meta = pd.read_csv(os.path.join(self.config['root_path'], dataset, "meta.csv"))
+            meta = _read_meta(os.path.join(self.config['root_path'], dataset, "meta.csv"))
             meta = meta[meta['split'] == "val"]
             meta["dir"] = meta['is_fake'].apply(lambda x: f'{dataset}/real' if x == 0 else f'{dataset}/fake')
 
@@ -47,10 +63,7 @@ class BaseDataset(torch.utils.data.Dataset):
         metas = []
         for dataset in self.config['train_datasets']:
             print(dataset)
-            if dataset not in ["commonvoice-ru", "commonvoice-en"]:
-                meta_aux = pd.read_csv(os.path.join(self.config['root_path'], dataset, "meta.csv"))
-            else:
-                meta_aux = pd.read_csv(os.path.join(self.config['root_path'], dataset, "meta.csv"), sep="\t")
+            meta_aux = _read_meta(os.path.join(self.config['root_path'], dataset, "meta.csv"))
             if self.training:
                 meta_aux = meta_aux[meta_aux['split'] == 'train']
             else:

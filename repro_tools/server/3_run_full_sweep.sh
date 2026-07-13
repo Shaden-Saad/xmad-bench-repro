@@ -59,6 +59,11 @@ fi
 # One-time, idempotent runtime patches (safe to re-run):
 #  (a) more DataLoader workers on a server
 sed -i 's/num_workers=2/num_workers=8/g' "$REPO/detection/data/data_manager.py" 2>/dev/null || true
+#  (c) meta.csv separator: the released data mixes comma- and tab-separated files
+#      (commonvoice-ru is TAB, commonvoice-en is COMMA) but the original code
+#      hard-codes tab for en/ru. Replace with auto-detection.
+grep -q "_read_meta" "$REPO/detection/data/base_dataset.py" || \
+  bash "$REPO/repro_tools/fix_meta_separator.sh" || true
 #  (b) make main.py read $CONFIG_PATH so parallel runs never share config.json
 grep -q "CONFIG_PATH" "$REPO/detection/main.py" || \
   sed -i "s|json.load(open('./config.json'))|json.load(open(os.environ.get('CONFIG_PATH','./config.json')))|" "$REPO/detection/main.py"

@@ -12,7 +12,18 @@ import json, os, sys
 
 REQUIRED_COLS = {"sample_name", "is_fake", "split"}          # split needed for train sets
 TEST_ONLY_COLS = {"sample_name", "is_fake"}                  # cross-domain test sets: split not filtered
-TAB_SETS = {"commonvoice-ru", "commonvoice-en", "mailabs-ru", "mailabs-en"}
+
+
+def sniff_sep(meta_path):
+    """Auto-detect comma vs tab.
+
+    The released data is inconsistent: commonvoice-ru is tab-separated while
+    commonvoice-en is comma-separated, yet the original code hard-codes a tab
+    separator for both. Sniffing the header is correct either way.
+    """
+    with open(meta_path, "r", encoding="utf-8", errors="replace") as f:
+        head = f.readline()
+    return "\t" if head.count("\t") > head.count(",") else ","
 
 def check_dataset(root, name, expect_split):
     problems = []
@@ -23,7 +34,7 @@ def check_dataset(root, name, expect_split):
     if not os.path.isfile(meta):
         problems.append(f"[{name}] meta.csv missing")
         return problems
-    sep = "\t" if name in TAB_SETS else ","
+    sep = sniff_sep(meta)
     try:
         import pandas as pd
         df = pd.read_csv(meta, sep=sep)

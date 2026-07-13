@@ -27,7 +27,7 @@ SWEEP="$REPO/repro_tools/server/3_run_full_sweep.sh"
 #     module load Python
 #     module load CUDA
 # --------------------------------------------------------------------------
-export XMAD_ENV="/project/home/p201284/guo/xmad-bench-repro/venv"    # <-- absolute path to the env root
+export XMAD_ENV=${XMAD_ENV:-$HOME/xmad-env}     # <-- absolute path to the env root
 
 if [ ! -f "$XMAD_ENV/bin/activate" ]; then
     echo "ERROR: no Python environment at $XMAD_ENV/bin/activate"
@@ -35,26 +35,16 @@ if [ ! -f "$XMAD_ENV/bin/activate" ]; then
     echo "Or export XMAD_ENV=/absolute/path/to/your/env before submitting."
     exit 1
 fi
-source $XMAD_ENV/bin/activate
+source "$XMAD_ENV/bin/activate"
 echo ">> env: $XMAD_ENV  ($(python -V 2>&1))"
 
 # Fail fast if the environment is unusable, instead of launching doomed jobs.
-# python -c "import torch, pandas, soundfile, librosa, pedalboard, sklearn, transformers; \
-# print('>> torch', torch.__version__, '| CUDA available:', torch.cuda.is_available())" || {
-#     echo "ERROR: dependencies not usable in $XMAD_ENV."
-#     echo "If this crashed with 'Illegal instruction', a wheel is incompatible with this CPU:"
-#     echo "  pip install --force-reinstall --no-binary :all: pedalboard"
-#     exit 1; }
-
-python -c "
-import torch, pandas, soundfile, librosa, pedalboard, sklearn, transformers
-print('>> torch', torch.__version__, '| CUDA available:', torch.cuda.is_available())
-" || {
+python -c "import torch, pandas, soundfile, librosa, pedalboard, sklearn, transformers; \
+print('>> torch', torch.__version__, '| CUDA available:', torch.cuda.is_available())" || {
     echo "ERROR: dependencies not usable in $XMAD_ENV."
     echo "If this crashed with 'Illegal instruction', a wheel is incompatible with this CPU:"
     echo "  pip install --force-reinstall --no-binary :all: pedalboard"
-    exit 1
-}
+    exit 1; }
 
 LANGS=(ar zh ro)
 
