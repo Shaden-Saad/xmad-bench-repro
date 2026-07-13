@@ -1,0 +1,11 @@
+>> activated env: /project/home/p201284/guo/xmad-bench-repro/venv/bin/activate  (Python 3.13.12)
+>> torch 2.12.0+cu132 | CUDA available: True
+>> Generating configs for: zh  (models: resnet18,resnet50,septr,ast, tag=node1_zh, GPU=1)
+Wrote 4 configs to /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_zh/  (languages: zh)
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_zh/config_zh_ast.json
+
+  OK  commonvoice-zh       rows=13776    sep=','
+  OK  aishell3             rows=2002     sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.

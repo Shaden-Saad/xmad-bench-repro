@@ -1,0 +1,11 @@
+>> activated env: /project/home/p201284/guo/xmad-bench-repro/venv/bin/activate  (Python 3.13.12)
+>> torch 2.12.0+cu132 | CUDA available: True
+>> Generating configs for: ro  (models: resnet18,resnet50,septr,ast, tag=node1_ro, GPU=2)
+Wrote 4 configs to /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_ro/  (languages: ro)
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_ro/config_ro_ast.json
+
+  OK  commonvoice-ro       rows=30820    sep=','
+  OK  voxpopuli            rows=6672     sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
