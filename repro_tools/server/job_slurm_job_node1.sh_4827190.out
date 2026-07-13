@@ -1,5 +1,0 @@
-/var/spool/parastation/jobs/4827190: line 12: venv/bin/activate: No such file or directory
->> Launching ar on GPU 0
->> Launching zh on GPU 1
->> Launching ro on GPU 2
-All node1 language sweeps finished.

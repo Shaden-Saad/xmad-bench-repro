@@ -1,6 +1,0 @@
-/var/spool/parastation/jobs/4827095: line 12: venv/bin/activate: No such file or directory
->> Launching ru on GPU 0
->> Launching de on GPU 1
->> Launching en on GPU 2
->> Launching es on GPU 3
-All node2 language sweeps finished.
