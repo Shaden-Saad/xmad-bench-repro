@@ -17,7 +17,7 @@ LANGS = {
     "ar": ("commonvoice-ar", "masc"),
     "en": ("commonvoice-en", "mailabs-en"),
     "de": ("commonvoice-de", "mailabs-de"),
-    "zh": ("commonvoice-zh", "aishell-3"),
+    "zh": ("commonvoice-zh", "aishell3"),
     "ro": ("commonvoice-ro", "voxpopuli"),
     "ru": ("commonvoice-ru", "mailabs-ru"),
     "es": ("commonvoice-es", "mailabs-es"),

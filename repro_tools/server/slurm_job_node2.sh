@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --time=20:30:00
+#SBATCH --time=10:30:00
 #SBATCH --account=p200635
 #SBATCH --partition=gpu
 #SBATCH --qos=default
@@ -15,7 +15,7 @@ REPO=/project/home/p201284/guo/xmad-bench-repro
 DATA=/project/home/p201284/guo/xmad_data
 SWEEP="$REPO/repro_tools/server/3_run_full_sweep.sh"
 
-LANGS=(ro de zh es)
+LANGS=(ru de en es)
 
 for i in "${!LANGS[@]}"; do
     LANG=${LANGS[$i]}

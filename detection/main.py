@@ -11,7 +11,7 @@ from models_util import *
 
 
 def main():
-    config = json.load(open('./config.json'))
+    config = json.load(open(os.environ.get('CONFIG_PATH','./config.json')))
     config['device'] = 'cuda' if torch.cuda.is_available() else ('mps' if torch.backends.mps.is_available() else 'cpu')
 
     Path(os.path.join(config['exp_path'], config['exp_name'])).mkdir(exist_ok=True, parents=True)

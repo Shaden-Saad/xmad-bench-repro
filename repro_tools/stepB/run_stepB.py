@@ -68,8 +68,12 @@ def run_one(repo, cfg_path, repeat, results_writer, preflight):
     proc = subprocess.run([sys.executable, "main.py"], cwd=det, env=env,
                           capture_output=True, text=True)
     sys.stdout.write(proc.stdout[-2000:])
+    
+    print(f"[DEBUG] returncode={proc.returncode}")
+    print(f"[DEBUG] stderr_len={len(proc.stderr)}")
+
     if proc.returncode != 0:
-        sys.stderr.write(proc.stderr[-2000:])
+        sys.stderr.write(proc.stderr[-2000:] or "(stderr is empty)")
         print(f"FAILED: {cfg['exp_name']}")
         return
     best_in, cross = parse_metrics(proc.stdout)

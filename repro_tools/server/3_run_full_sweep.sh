@@ -23,10 +23,14 @@ done
 
 # One-time, idempotent runtime patches (safe to re-run):
 #  (a) more DataLoader workers on a server
-sed -i 's/num_workers=2/num_workers=8/g' "$REPO/detection/data/data_manager.py" 2>/dev/null || true
-#  (b) make main.py read $CONFIG_PATH so parallel runs never share config.json
-grep -q "CONFIG_PATH" "$REPO/detection/main.py" || \
-  sed -i "s|json.load(open('./config.json'))|json.load(open(os.environ.get('CONFIG_PATH','./config.json')))|" "$REPO/detection/main.py"
+(
+  flock -x 200
+  sed -i 's/num_workers=2/num_workers=8/g' "$REPO/detection/data/data_manager.py" 2>/dev/null || true
+  #  (b) make main.py read $CONFIG_PATH so parallel runs never share config.json
+  grep -q "CONFIG_PATH" "$REPO/detection/main.py" || \
+    sed -i "s|json.load(open('./config.json'))|json.load(open(os.environ.get('CONFIG_PATH','./config.json')))|" "$REPO/detection/main.py"
+
+) 200>"$REPO/.patch.lock"
 
 # Use 6 models only if the SSL code has been added; otherwise the 4 wired ones.
 if [ -f "$REPO/detection/ssl_models.py" ]; then

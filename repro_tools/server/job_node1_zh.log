@@ -1,0 +1,149 @@
+>> Generating configs for: zh  (models: resnet18,resnet50,septr,ast, tag=node1_zh, GPU=1)
+Wrote 4 configs to /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_zh/  (languages: zh)
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_zh/config_zh_ast.json
+
+  OK  commonvoice-zh       rows=13776    sep=','
+  OK  aishell3             rows=2002     sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_zh/config_zh_ast.json
+
+  OK  commonvoice-zh       rows=13776    sep=','
+  OK  aishell3             rows=2002     sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_zh/config_zh_ast.json
+
+  OK  commonvoice-zh       rows=13776    sep=','
+  OK  aishell3             rows=2002     sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_zh/config_zh_resnet18.json
+
+  OK  commonvoice-zh       rows=13776    sep=','
+  OK  aishell3             rows=2002     sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_zh/config_zh_resnet18.json
+
+  OK  commonvoice-zh       rows=13776    sep=','
+  OK  aishell3             rows=2002     sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_zh/config_zh_resnet18.json
+
+  OK  commonvoice-zh       rows=13776    sep=','
+  OK  aishell3             rows=2002     sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_zh/config_zh_resnet50.json
+
+  OK  commonvoice-zh       rows=13776    sep=','
+  OK  aishell3             rows=2002     sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_zh/config_zh_resnet50.json
+
+  OK  commonvoice-zh       rows=13776    sep=','
+  OK  aishell3             rows=2002     sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_zh/config_zh_resnet50.json
+
+  OK  commonvoice-zh       rows=13776    sep=','
+  OK  aishell3             rows=2002     sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_zh/config_zh_septr.json
+
+  OK  commonvoice-zh       rows=13776    sep=','
+  OK  aishell3             rows=2002     sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_zh/config_zh_septr.json
+
+  OK  commonvoice-zh       rows=13776    sep=','
+  OK  aishell3             rows=2002     sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_zh/config_zh_septr.json
+
+  OK  commonvoice-zh       rows=13776    sep=','
+  OK  aishell3             rows=2002     sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+(stderr is empty)(stderr is empty)(stderr is empty)(stderr is empty)(stderr is empty)(stderr is empty)(stderr is empty)(stderr is empty)(stderr is empty)(stderr is empty)(stderr is empty)(stderr is empty)
+=== RUN zh_ast_r01 (model=ast) ===
+[DEBUG] returncode=-4
+[DEBUG] stderr_len=0
+FAILED: zh_ast_r01
+
+=== RUN zh_ast_r02 (model=ast) ===
+[DEBUG] returncode=-4
+[DEBUG] stderr_len=0
+FAILED: zh_ast_r02
+
+=== RUN zh_ast_r03 (model=ast) ===
+[DEBUG] returncode=-4
+[DEBUG] stderr_len=0
+FAILED: zh_ast_r03
+
+=== RUN zh_resnet18_r01 (model=resnet18) ===
+[DEBUG] returncode=-4
+[DEBUG] stderr_len=0
+FAILED: zh_resnet18_r01
+
+=== RUN zh_resnet18_r02 (model=resnet18) ===
+[DEBUG] returncode=-4
+[DEBUG] stderr_len=0
+FAILED: zh_resnet18_r02
+
+=== RUN zh_resnet18_r03 (model=resnet18) ===
+[DEBUG] returncode=-4
+[DEBUG] stderr_len=0
+FAILED: zh_resnet18_r03
+
+=== RUN zh_resnet50_r01 (model=resnet50) ===
+[DEBUG] returncode=-4
+[DEBUG] stderr_len=0
+FAILED: zh_resnet50_r01
+
+=== RUN zh_resnet50_r02 (model=resnet50) ===
+[DEBUG] returncode=-4
+[DEBUG] stderr_len=0
+FAILED: zh_resnet50_r02
+
+=== RUN zh_resnet50_r03 (model=resnet50) ===
+[DEBUG] returncode=-4
+[DEBUG] stderr_len=0
+FAILED: zh_resnet50_r03
+
+=== RUN zh_septr_r01 (model=septr) ===
+[DEBUG] returncode=-4
+[DEBUG] stderr_len=0
+FAILED: zh_septr_r01
+
+=== RUN zh_septr_r02 (model=septr) ===
+[DEBUG] returncode=-4
+[DEBUG] stderr_len=0
+FAILED: zh_septr_r02
+
+=== RUN zh_septr_r03 (model=septr) ===
+[DEBUG] returncode=-4
+[DEBUG] stderr_len=0
+FAILED: zh_septr_r03
+
+Done. Results -> /project/home/p201284/guo/xmad-bench-repro/results_node1_zh.csv
+Done (node1_zh). Metrics -> /project/home/p201284/guo/xmad-bench-repro/results_node1_zh.csv ; logs/checkpoints under detection/experiments/.
