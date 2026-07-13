@@ -1,4 +1,4 @@
-server/job*
+repro_tools/server/job*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -183,3 +183,4 @@ detection/runs/
 detection/_run_configs/
 __pycache__/
 *.pyc
+repro_tools/server/test.sh
