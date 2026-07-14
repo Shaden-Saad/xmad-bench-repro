@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --time=10:30:00
+#SBATCH --time=48:00:00
 #SBATCH --account=p200635
 #SBATCH --partition=gpu
 #SBATCH --qos=default

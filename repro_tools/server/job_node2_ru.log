@@ -7,13 +7,6 @@ multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench
 
 
 PRE-FLIGHT FAILED:
-  - [commonvoice-ru] meta.csv missing columns {'is_fake', 'sample_name', 'split'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
-  - [mailabs-ru] meta.csv missing columns {'is_fake', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
-root_path: /project/home/p201284/guo/xmad_data
-multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_ru/config_ru_ast.json
-
-
-PRE-FLIGHT FAILED:
   - [commonvoice-ru] meta.csv missing columns {'split', 'is_fake', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
   - [mailabs-ru] meta.csv missing columns {'is_fake', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
 root_path: /project/home/p201284/guo/xmad_data
@@ -21,8 +14,15 @@ multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench
 
 
 PRE-FLIGHT FAILED:
-  - [commonvoice-ru] meta.csv missing columns {'sample_name', 'is_fake', 'split'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
-  - [mailabs-ru] meta.csv missing columns {'sample_name', 'is_fake'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
+  - [commonvoice-ru] meta.csv missing columns {'is_fake', 'split', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
+  - [mailabs-ru] meta.csv missing columns {'is_fake', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
+root_path: /project/home/p201284/guo/xmad_data
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_ru/config_ru_ast.json
+
+
+PRE-FLIGHT FAILED:
+  - [commonvoice-ru] meta.csv missing columns {'is_fake', 'split', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
+  - [mailabs-ru] meta.csv missing columns {'is_fake', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
 root_path: /project/home/p201284/guo/xmad_data
 multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_ru/config_ru_resnet18.json
 
@@ -35,10 +35,17 @@ multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench
 
 
 PRE-FLIGHT FAILED:
-  - [commonvoice-ru] meta.csv missing columns {'sample_name', 'is_fake', 'split'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
-  - [mailabs-ru] meta.csv missing columns {'sample_name', 'is_fake'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
+  - [commonvoice-ru] meta.csv missing columns {'split', 'is_fake', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
+  - [mailabs-ru] meta.csv missing columns {'is_fake', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
 root_path: /project/home/p201284/guo/xmad_data
 multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_ru/config_ru_resnet18.json
+
+
+PRE-FLIGHT FAILED:
+  - [commonvoice-ru] meta.csv missing columns {'split', 'is_fake', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
+  - [mailabs-ru] meta.csv missing columns {'is_fake', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
+root_path: /project/home/p201284/guo/xmad_data
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_ru/config_ru_resnet50.json
 
 
 PRE-FLIGHT FAILED:
@@ -46,20 +53,27 @@ PRE-FLIGHT FAILED:
   - [mailabs-ru] meta.csv missing columns {'sample_name', 'is_fake'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
 root_path: /project/home/p201284/guo/xmad_data
 multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_ru/config_ru_resnet50.json
+
+
+PRE-FLIGHT FAILED:
+  - [commonvoice-ru] meta.csv missing columns {'sample_name', 'split', 'is_fake'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
+  - [mailabs-ru] meta.csv missing columns {'sample_name', 'is_fake'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
+root_path: /project/home/p201284/guo/xmad_data
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_ru/config_ru_resnet50.json
+
+
+PRE-FLIGHT FAILED:
+  - [commonvoice-ru] meta.csv missing columns {'sample_name', 'split', 'is_fake'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
+  - [mailabs-ru] meta.csv missing columns {'sample_name', 'is_fake'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
+root_path: /project/home/p201284/guo/xmad_data
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_ru/config_ru_septr.json
 
 
 PRE-FLIGHT FAILED:
   - [commonvoice-ru] meta.csv missing columns {'is_fake', 'sample_name', 'split'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
   - [mailabs-ru] meta.csv missing columns {'is_fake', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
 root_path: /project/home/p201284/guo/xmad_data
-multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_ru/config_ru_resnet50.json
-
-
-PRE-FLIGHT FAILED:
-  - [commonvoice-ru] meta.csv missing columns {'sample_name', 'is_fake', 'split'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
-  - [mailabs-ru] meta.csv missing columns {'sample_name', 'is_fake'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
-root_path: /project/home/p201284/guo/xmad_data
-multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_ru/config_ru_resnet50.json
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_ru/config_ru_septr.json
 
 
 PRE-FLIGHT FAILED:
@@ -70,22 +84,8 @@ multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench
 
 
 PRE-FLIGHT FAILED:
-  - [commonvoice-ru] meta.csv missing columns {'split', 'sample_name', 'is_fake'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
+  - [commonvoice-ru] meta.csv missing columns {'sample_name', 'split', 'is_fake'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
   - [mailabs-ru] meta.csv missing columns {'sample_name', 'is_fake'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
-root_path: /project/home/p201284/guo/xmad_data
-multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_ru/config_ru_septr.json
-
-
-PRE-FLIGHT FAILED:
-  - [commonvoice-ru] meta.csv missing columns {'is_fake', 'split', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
-  - [mailabs-ru] meta.csv missing columns {'is_fake', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
-root_path: /project/home/p201284/guo/xmad_data
-multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_ru/config_ru_septr.json
-
-
-PRE-FLIGHT FAILED:
-  - [commonvoice-ru] meta.csv missing columns {'is_fake', 'split', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
-  - [mailabs-ru] meta.csv missing columns {'is_fake', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
 SKIP /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_ru/config_ru_ast.json: preflight failed
 SKIP /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_ru/config_ru_ast.json: preflight failed
 SKIP /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_ru/config_ru_ast.json: preflight failed
