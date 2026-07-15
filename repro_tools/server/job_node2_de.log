@@ -86,3 +86,481 @@ multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench
   OK  mailabs-de           rows=3100     sep=','
 
 PRE-FLIGHT PASSED — data layout looks correct for this config.
+
+=== RUN de_ast_r01 (model=ast) ===
+eration 520 = 0.0788301943190163
+Training loss on iteration 540 = 0.042599382635671645
+Training loss on iteration 560 = 0.024599046746152452
+Training loss on iteration 580 = 0.002836869286875299
+Training loss on iteration 600 = 0.023019717143870366
+Training loss on iteration 620 = 0.028884956195543054
+Training loss on iteration 640 = 0.008180517223991046
+Training loss on iteration 660 = 0.0592484440600856
+Training loss on iteration 680 = 0.03263649481013999
+Training loss on iteration 700 = 0.02837405452009989
+Training loss on iteration 720 = 0.01006297613021161
+Training loss on iteration 740 = 0.014495173840987263
+Training loss on iteration 760 = 0.04512364868442091
+Training loss on iteration 780 = 0.028697237407322974
+Training loss on iteration 800 = 0.04199775226588827
+Training loss on iteration 820 = 0.03193916840245947
+Training loss on iteration 840 = 0.017266303360520395
+Training loss on iteration 860 = 0.019408334321997244
+Training loss on iteration 880 = 0.002287273468755302
+Training loss on iteration 900 = 0.03834982008629595
+Training loss on iteration 920 = 0.01773028461248032
+Training loss on iteration 940 = 0.15171032600082981
+Training loss on iteration 960 = 0.04180616289377213
+Training loss on iteration 980 = 0.020205734204500912
+Training loss on iteration 1000 = 0.053575160846230575
+Training loss on iteration 1020 = 0.025495383779343683
+Training loss on iteration 1040 = 0.00735822301794542
+Training loss on iteration 1060 = 0.02975931399705587
+Training loss on iteration 1080 = 0.02613656259054551
+Training loss on iteration 1100 = 0.042690336843952535
+Training loss on iteration 1120 = 0.03379610347474227
+Training loss on iteration 1140 = 0.016381778344293708
+Training loss on iteration 1160 = 0.07560283886559774
+### EVAL:: Epoch 20:: Loss = 0.010072408899328708 :: ACC = 0.9981606376456161, AUC = 0.9999766931400017, EER = 0.0018393623543838135
+### Out of domain:: Best epoch 20 :: ACC = 0.9261290322580645, AUC = 0.9845939646201873, EER = 0.0696774193548387
+[DEBUG] returncode=0
+[DEBUG] stderr_len=2165
+recorded: {'exp_name': 'de_ast_r01', 'model': 'ast', 'train': 'commonvoice-de', 'test': 'mailabs-de', 'in_acc': 0.9981606376456161, 'in_auc': 0.9999766931400017, 'in_eer': 0.0018393623543838135, 'cross_acc': 0.9261290322580645, 'cross_auc': 0.9845939646201873, 'cross_eer': 0.0696774193548387}
+
+=== RUN de_ast_r02 (model=ast) ===
+9514
+Training loss on iteration 520 = 0.04470447506173514
+Training loss on iteration 540 = 0.07729582536994713
+Training loss on iteration 560 = 0.05417414160328917
+Training loss on iteration 580 = 0.047672149250865915
+Training loss on iteration 600 = 0.10841030008741655
+Training loss on iteration 620 = 0.05391492472263053
+Training loss on iteration 640 = 0.03513073692447506
+Training loss on iteration 660 = 0.09041770645417273
+Training loss on iteration 680 = 0.03056418318010401
+Training loss on iteration 700 = 0.04525265052507166
+Training loss on iteration 720 = 0.03311394304037094
+Training loss on iteration 740 = 0.01373404311889317
+Training loss on iteration 760 = 0.05572739812359941
+Training loss on iteration 780 = 0.007057476058253087
+Training loss on iteration 800 = 0.05821810444467701
+Training loss on iteration 820 = 0.02595859241846483
+Training loss on iteration 840 = 0.06315215036956942
+Training loss on iteration 860 = 0.03570483323710505
+Training loss on iteration 880 = 0.06410415155114606
+Training loss on iteration 900 = 0.03866902112495154
+Training loss on iteration 920 = 0.05758865328098182
+Training loss on iteration 940 = 0.06994503919740964
+Training loss on iteration 960 = 0.02976881142167258
+Training loss on iteration 980 = 0.03768369579411228
+Training loss on iteration 1000 = 0.03627142485929653
+Training loss on iteration 1020 = 0.07582885518513649
+Training loss on iteration 1040 = 0.05638314143870957
+Training loss on iteration 1060 = 0.03148513263440691
+Training loss on iteration 1080 = 0.05399360098381294
+Training loss on iteration 1100 = 0.019695102381228936
+Training loss on iteration 1120 = 0.013492122317256872
+Training loss on iteration 1140 = 0.07242093830827798
+Training loss on iteration 1160 = 0.07102843660977669
+### EVAL:: Epoch 20:: Loss = 0.024782991915517052 :: ACC = 0.9944819129368485, AUC = 0.9997199417629234, EER = 0.005518087063151441
+### Out of domain:: Best epoch 10 :: ACC = 0.89, AUC = 0.9619071800208117, EER = 0.11548387096774193
+[DEBUG] returncode=0
+[DEBUG] stderr_len=1832
+recorded: {'exp_name': 'de_ast_r02', 'model': 'ast', 'train': 'commonvoice-de', 'test': 'mailabs-de', 'in_acc': 0.9947884733292459, 'in_auc': 0.9998612865913002, 'in_eer': 0.005518087063151441, 'cross_acc': 0.89, 'cross_auc': 0.9619071800208117, 'cross_eer': 0.11548387096774193}
+
+=== RUN de_ast_r03 (model=ast) ===
+ iteration 520 = 0.036469951333128844
+Training loss on iteration 540 = 0.030421232304070144
+Training loss on iteration 560 = 0.033629639615537596
+Training loss on iteration 580 = 0.04736200944462325
+Training loss on iteration 600 = 0.03629180064890534
+Training loss on iteration 620 = 0.02740907694096677
+Training loss on iteration 640 = 0.04528944721314474
+Training loss on iteration 660 = 0.03108711904133088
+Training loss on iteration 680 = 0.041732140351086855
+Training loss on iteration 700 = 0.021328864982933737
+Training loss on iteration 720 = 0.02727857626741752
+Training loss on iteration 740 = 0.01982467000852921
+Training loss on iteration 760 = 0.03901021510682767
+Training loss on iteration 780 = 0.02987112472910667
+Training loss on iteration 800 = 0.014227982578449882
+Training loss on iteration 820 = 0.0132306476982194
+Training loss on iteration 840 = 0.015596060582538485
+Training loss on iteration 860 = 0.006371579377446324
+Training loss on iteration 880 = 0.011372324212425155
+Training loss on iteration 900 = 0.13398636027268368
+Training loss on iteration 920 = 0.05471262065693736
+Training loss on iteration 940 = 0.06369897104450502
+Training loss on iteration 960 = 0.06822129549109376
+Training loss on iteration 980 = 0.05391387717390898
+Training loss on iteration 1000 = 0.06785502092679963
+Training loss on iteration 1020 = 0.035065228230087085
+Training loss on iteration 1040 = 0.025732130245887674
+Training loss on iteration 1060 = 0.010609319934155792
+Training loss on iteration 1080 = 0.020133575993531848
+Training loss on iteration 1100 = 0.14247700791311219
+Training loss on iteration 1120 = 0.07141634229919873
+Training loss on iteration 1140 = 0.08096650113584473
+Training loss on iteration 1160 = 0.02792796678841114
+### EVAL:: Epoch 20:: Loss = 0.01300800909833457 :: ACC = 0.9957081545064378, AUC = 0.9999500030261327, EER = 0.003678724708767627
+### Out of domain:: Best epoch 16 :: ACC = 0.9209677419354839, AUC = 0.9817498439125911, EER = 0.07870967741935483
+[DEBUG] returncode=0
+[DEBUG] stderr_len=2100
+recorded: {'exp_name': 'de_ast_r03', 'model': 'ast', 'train': 'commonvoice-de', 'test': 'mailabs-de', 'in_acc': 0.9963212752912324, 'in_auc': 0.9998312132235606, 'in_eer': 0.003678724708767627, 'cross_acc': 0.9209677419354839, 'cross_auc': 0.9817498439125911, 'cross_eer': 0.07870967741935483}
+
+=== RUN de_resnet18_r01 (model=resnet18) ===
+L:: Epoch 14:: Loss = 0.03147540933506994 :: ACC = 0.9895769466584917, AUC = 0.9999909779896781, EER = 0.0018393623543838135
+Training on epoch 15
+Training loss on iteration 0 = 0.00015167721721809357
+Training loss on iteration 20 = 0.01698945989628555
+Training loss on iteration 40 = 0.006763804802903906
+### EVAL:: Epoch 15:: Loss = 0.0019014850773226713 :: ACC = 0.9993868792152054, AUC = 0.9999996240829033, EER = 0.0006131207847946045
+Training on epoch 16
+Training loss on iteration 0 = 0.00017871228919830173
+Training loss on iteration 20 = 0.0021435537550132723
+Training loss on iteration 40 = 0.001615406106793671
+### EVAL:: Epoch 16:: Loss = 0.0031437043755518598 :: ACC = 0.9990803188228081, AUC = 1.0, EER = 0.0
+Training on epoch 17
+Training loss on iteration 0 = 0.0007234691875055432
+Training loss on iteration 20 = 0.0049620719411905155
+Training loss on iteration 40 = 0.001570846915637958
+### EVAL:: Epoch 17:: Loss = 0.001060747107524495 :: ACC = 0.9993868792152054, AUC = 1.0, EER = 0.0
+Training on epoch 18
+Training loss on iteration 0 = 0.0002344488020753488
+Training loss on iteration 20 = 0.001819842611803324
+Training loss on iteration 40 = 0.0020087554679776077
+### EVAL:: Epoch 18:: Loss = 0.0005192829753000564 :: ACC = 0.9996934396076027, AUC = 1.0, EER = 0.0
+Training on epoch 19
+Training loss on iteration 0 = 0.00015276699559763074
+Training loss on iteration 20 = 0.0015729017835838023
+Training loss on iteration 40 = 0.0005861985511728563
+### EVAL:: Epoch 19:: Loss = 0.0007845155647266759 :: ACC = 0.9996934396076027, AUC = 1.0, EER = 0.0
+Training on epoch 20
+Training loss on iteration 0 = 0.0001792396797100082
+Training loss on iteration 20 = 0.002191975353525777
+Training loss on iteration 40 = 0.00040097672690535545
+### EVAL:: Epoch 20:: Loss = 0.0007752177517191097 :: ACC = 0.9993868792152054, AUC = 0.9999996240829033, EER = 0.0006131207847946045
+### Out of domain:: Best epoch 6 :: ACC = 0.9458064516129032, AUC = 0.9972482830385017, EER = 0.027096774193548386
+[DEBUG] returncode=0
+[DEBUG] stderr_len=0
+recorded: {'exp_name': 'de_resnet18_r01', 'model': 'resnet18', 'train': 'commonvoice-de', 'test': 'mailabs-de', 'in_acc': 0.9996934396076027, 'in_auc': 0.9999977444974195, 'in_eer': 0.0, 'cross_acc': 0.9458064516129032, 'cross_auc': 0.9972482830385017, 'cross_eer': 0.027096774193548386}
+
+=== RUN de_resnet18_r02 (model=resnet18) ===
+ Loss = 0.0003064621784607666 :: ACC = 1.0, AUC = 1.0, EER = 0.0
+Training on epoch 15
+Training loss on iteration 0 = 0.00010059678606921807
+Training loss on iteration 20 = 0.0004083615262970852
+Training loss on iteration 40 = 0.00044442177986638855
+### EVAL:: Epoch 15:: Loss = 0.014827155628847902 :: ACC = 0.9938687921520539, AUC = 1.0, EER = 0.0
+Training on epoch 16
+Training loss on iteration 0 = 6.161692726891488e-05
+Training loss on iteration 20 = 0.0032617622411635237
+Training loss on iteration 40 = 0.0016865779831277904
+### EVAL:: Epoch 16:: Loss = 0.0008584435456167311 :: ACC = 0.9996934396076027, AUC = 0.9999996240829033, EER = 0.0006131207847946045
+Training on epoch 17
+Training loss on iteration 0 = 0.00018275385082233697
+Training loss on iteration 20 = 0.003217845956532983
+Training loss on iteration 40 = 0.002521714249996876
+### EVAL:: Epoch 17:: Loss = 0.0022793715836165935 :: ACC = 0.9993868792152054, AUC = 0.9999996240829033, EER = 0.0006131207847946045
+Training on epoch 18
+Training loss on iteration 0 = 0.00826176255941391
+Training loss on iteration 20 = 0.003161743117016158
+Training loss on iteration 40 = 0.004009746438168804
+### EVAL:: Epoch 18:: Loss = 0.009303902127163673 :: ACC = 0.9978540772532188, AUC = 0.9999943612435488, EER = 0.0018393623543838135
+Training on epoch 19
+Training loss on iteration 0 = 0.0016331607475876808
+Training loss on iteration 20 = 0.0038321996096783552
+Training loss on iteration 40 = 0.0025406642127563826
+### EVAL:: Epoch 19:: Loss = 0.04320432893078335 :: ACC = 0.9834457388105456, AUC = 0.9999962408290325, EER = 0.001226241569589209
+Training on epoch 20
+Training loss on iteration 0 = 5.32076446688734e-05
+Training loss on iteration 20 = 0.0018253138730869977
+Training loss on iteration 40 = 0.0007520997120082029
+### EVAL:: Epoch 20:: Loss = 0.015021770518357997 :: ACC = 0.992949110974862, AUC = 1.0, EER = 0.0
+### Out of domain:: Best epoch 14 :: ACC = 0.9790322580645161, AUC = 0.9985494276795005, EER = 0.017419354838709676
+[DEBUG] returncode=0
+[DEBUG] stderr_len=0
+recorded: {'exp_name': 'de_resnet18_r02', 'model': 'resnet18', 'train': 'commonvoice-de', 'test': 'mailabs-de', 'in_acc': 1.0, 'in_auc': 1.0, 'in_eer': 0.0, 'cross_acc': 0.9790322580645161, 'cross_auc': 0.9985494276795005, 'cross_eer': 0.017419354838709676}
+
+=== RUN de_resnet18_r03 (model=resnet18) ===
+24706603
+Training loss on iteration 40 = 0.0076968960413069
+### EVAL:: Epoch 14:: Loss = 0.005118102697211083 :: ACC = 0.9978540772532188, AUC = 0.9999996240829033, EER = 0.0006131207847946045
+Training on epoch 15
+Training loss on iteration 0 = 0.003356736619025469
+Training loss on iteration 20 = 0.0040314892627066005
+Training loss on iteration 40 = 0.002010688796508475
+### EVAL:: Epoch 15:: Loss = 0.0019519328773319156 :: ACC = 0.9993868792152054, AUC = 1.0, EER = 0.0
+Training on epoch 16
+Training loss on iteration 0 = 0.015860456973314285
+Training loss on iteration 20 = 0.0018794591676851268
+Training loss on iteration 40 = 0.003408472221599368
+### EVAL:: Epoch 16:: Loss = 0.002792027903584891 :: ACC = 0.9987737584304108, AUC = 1.0, EER = 0.0
+Training on epoch 17
+Training loss on iteration 0 = 0.00908543262630701
+Training loss on iteration 20 = 0.002704918303334125
+Training loss on iteration 40 = 0.003190570729566389
+### EVAL:: Epoch 17:: Loss = 0.0024988061607837822 :: ACC = 0.9990803188228081, AUC = 0.9999992481658065, EER = 0.0006131207847946045
+Training on epoch 18
+Training loss on iteration 0 = 0.0029193442314863205
+Training loss on iteration 20 = 0.002213139108971518
+Training loss on iteration 40 = 0.0012447284079826204
+### EVAL:: Epoch 18:: Loss = 0.0015337690671807824 :: ACC = 0.9996934396076027, AUC = 1.0, EER = 0.0
+Training on epoch 19
+Training loss on iteration 0 = 6.983759521972388e-05
+Training loss on iteration 20 = 0.002858447477319714
+Training loss on iteration 40 = 0.0009106811598940112
+### EVAL:: Epoch 19:: Loss = 0.0004749216242550895 :: ACC = 1.0, AUC = 1.0, EER = 0.0
+Training on epoch 20
+Training loss on iteration 0 = 0.00014665209164377302
+Training loss on iteration 20 = 0.0013303188652571407
+Training loss on iteration 40 = 0.0010520256716517907
+### EVAL:: Epoch 20:: Loss = 0.00047533506037713294 :: ACC = 1.0, AUC = 1.0, EER = 0.0
+### Out of domain:: Best epoch 19 :: ACC = 0.9441935483870968, AUC = 0.9957864724245578, EER = 0.02967741935483871
+[DEBUG] returncode=0
+[DEBUG] stderr_len=0
+recorded: {'exp_name': 'de_resnet18_r03', 'model': 'resnet18', 'train': 'commonvoice-de', 'test': 'mailabs-de', 'in_acc': 1.0, 'in_auc': 1.0, 'in_eer': 0.0, 'cross_acc': 0.9441935483870968, 'cross_auc': 0.9957864724245578, 'cross_eer': 0.02967741935483871}
+
+=== RUN de_resnet50_r01 (model=resnet50) ===
+0052974228747189045
+Training loss on iteration 20 = 0.00319440600701455
+Training loss on iteration 40 = 0.0031035432272346953
+Training loss on iteration 60 = 0.001501231983775142
+Training loss on iteration 80 = 0.004906173584095086
+### EVAL:: Epoch 16:: Loss = 0.005505581900806332 :: ACC = 0.9978540772532188, AUC = 1.0, EER = 0.0
+Training on epoch 17
+Training loss on iteration 0 = 0.004713349509984255
+Training loss on iteration 20 = 0.004632197045975772
+Training loss on iteration 40 = 0.0014410883167329303
+Training loss on iteration 60 = 0.002986614190194814
+Training loss on iteration 80 = 0.0026520096929289138
+### EVAL:: Epoch 17:: Loss = 0.01003221798153867 :: ACC = 0.9957081545064378, AUC = 1.0, EER = 0.0
+Training on epoch 18
+Training loss on iteration 0 = 0.01876511052250862
+Training loss on iteration 20 = 0.0075263503043970555
+Training loss on iteration 40 = 0.0017631291462748776
+Training loss on iteration 60 = 0.0011444234753071215
+Training loss on iteration 80 = 0.0004501726609760226
+### EVAL:: Epoch 18:: Loss = 0.0026748814799859738 :: ACC = 0.9990803188228081, AUC = 0.9999984963316131, EER = 0.001226241569589209
+Training on epoch 19
+Training loss on iteration 0 = 0.0014358494663611054
+Training loss on iteration 20 = 0.011081796884536744
+Training loss on iteration 40 = 0.011760403856897028
+Training loss on iteration 60 = 0.0034573165848996723
+Training loss on iteration 80 = 0.0031966948066838087
+### EVAL:: Epoch 19:: Loss = 0.000177323455110266 :: ACC = 1.0, AUC = 1.0, EER = 0.0
+Training on epoch 20
+Training loss on iteration 0 = 6.27873232588172e-05
+Training loss on iteration 20 = 0.001552312935837108
+Training loss on iteration 40 = 0.003473516151143485
+Training loss on iteration 60 = 0.0008644603803986683
+Training loss on iteration 80 = 0.0032416052870303247
+### EVAL:: Epoch 20:: Loss = 0.0004475602978052067 :: ACC = 1.0, AUC = 1.0, EER = 0.0
+### Out of domain:: Best epoch 8 :: ACC = 0.9758064516129032, AUC = 0.9989972944849115, EER = 0.016129032258064516
+[DEBUG] returncode=0
+[DEBUG] stderr_len=0
+recorded: {'exp_name': 'de_resnet50_r01', 'model': 'resnet50', 'train': 'commonvoice-de', 'test': 'mailabs-de', 'in_acc': 1.0, 'in_auc': 1.0, 'in_eer': 0.0, 'cross_acc': 0.9758064516129032, 'cross_auc': 0.9989972944849115, 'cross_eer': 0.016129032258064516}
+
+=== RUN de_resnet50_r02 (model=resnet50) ===
+0.004602819345927855
+Training loss on iteration 40 = 0.004256986924701778
+Training loss on iteration 60 = 0.0015173287323705154
+Training loss on iteration 80 = 0.0020279719905374805
+### EVAL:: Epoch 16:: Loss = 0.0012568251640161826 :: ACC = 0.9990803188228081, AUC = 0.9999992481658065, EER = 0.0006131207847946045
+Training on epoch 17
+Training loss on iteration 0 = 0.005086291115731001
+Training loss on iteration 20 = 0.003048306911114196
+Training loss on iteration 40 = 0.0013576987105807347
+Training loss on iteration 60 = 0.0029431617088903294
+Training loss on iteration 80 = 0.0033971320989166997
+### EVAL:: Epoch 17:: Loss = 0.004754589623233925 :: ACC = 0.9987737584304108, AUC = 1.0, EER = 0.0
+Training on epoch 18
+Training loss on iteration 0 = 0.00013460406626109034
+Training loss on iteration 20 = 0.004187461376750435
+Training loss on iteration 40 = 0.002410204881653044
+Training loss on iteration 60 = 0.0040946001211750625
+Training loss on iteration 80 = 0.003085910855952534
+### EVAL:: Epoch 18:: Loss = 0.00010520258929256978 :: ACC = 1.0, AUC = 1.0, EER = 0.0
+Training on epoch 19
+Training loss on iteration 0 = 0.00985887460410595
+Training loss on iteration 20 = 0.0009385442894540574
+Training loss on iteration 40 = 0.0035955897626763545
+Training loss on iteration 60 = 0.001045136788934542
+Training loss on iteration 80 = 0.0006084191445609122
+### EVAL:: Epoch 19:: Loss = 0.000856944875393514 :: ACC = 0.9996934396076027, AUC = 1.0, EER = 0.0
+Training on epoch 20
+Training loss on iteration 0 = 0.0014372256118804216
+Training loss on iteration 20 = 0.0034204520571904594
+Training loss on iteration 40 = 0.001749253289290209
+Training loss on iteration 60 = 0.011598321669407597
+Training loss on iteration 80 = 0.004998252185760066
+### EVAL:: Epoch 20:: Loss = 0.0075296176062092145 :: ACC = 0.9975475168608215, AUC = 0.9999962408290325, EER = 0.001226241569589209
+### Out of domain:: Best epoch 7 :: ACC = 0.9187096774193548, AUC = 0.9856869927159209, EER = 0.07741935483870968
+[DEBUG] returncode=0
+[DEBUG] stderr_len=0
+recorded: {'exp_name': 'de_resnet50_r02', 'model': 'resnet50', 'train': 'commonvoice-de', 'test': 'mailabs-de', 'in_acc': 1.0, 'in_auc': 1.0, 'in_eer': 0.0, 'cross_acc': 0.9187096774193548, 'cross_auc': 0.9856869927159209, 'cross_eer': 0.07741935483870968}
+
+=== RUN de_resnet50_r03 (model=resnet50) ===
+ iteration 20 = 0.003957324565180898
+Training loss on iteration 40 = 0.004003731044758751
+Training loss on iteration 60 = 0.00276966696146701
+Training loss on iteration 80 = 0.0049097064951638455
+### EVAL:: Epoch 16:: Loss = 0.0018883729465839177 :: ACC = 0.9987737584304108, AUC = 0.999998496331613, EER = 0.0006131207847946045
+Training on epoch 17
+Training loss on iteration 0 = 0.00018410751363262534
+Training loss on iteration 20 = 0.0017445910955757426
+Training loss on iteration 40 = 0.003149573492191848
+Training loss on iteration 60 = 0.0012970565191153583
+Training loss on iteration 80 = 0.0011017882075066154
+### EVAL:: Epoch 17:: Loss = 0.0005566596712689125 :: ACC = 0.9996934396076027, AUC = 0.9999996240829033, EER = 0.0006131207847946045
+Training on epoch 18
+Training loss on iteration 0 = 0.0004028894763905555
+Training loss on iteration 20 = 0.0083071665456373
+Training loss on iteration 40 = 0.005227093988833076
+Training loss on iteration 60 = 0.006810269462948782
+Training loss on iteration 80 = 0.005968812731225626
+### EVAL:: Epoch 18:: Loss = 0.0033280614786627616 :: ACC = 0.9987737584304108, AUC = 1.0, EER = 0.0
+Training on epoch 19
+Training loss on iteration 0 = 0.017698043957352638
+Training loss on iteration 20 = 0.0013617783118888838
+Training loss on iteration 40 = 0.0027635008944798755
+Training loss on iteration 60 = 0.0093412295973053
+Training loss on iteration 80 = 0.002824017807870405
+### EVAL:: Epoch 19:: Loss = 0.0003802893006026637 :: ACC = 1.0, AUC = 1.0, EER = 0.0
+Training on epoch 20
+Training loss on iteration 0 = 0.0001478500198572874
+Training loss on iteration 20 = 0.002444393476616824
+Training loss on iteration 40 = 0.004939643199577404
+Training loss on iteration 60 = 0.0013707459840588854
+Training loss on iteration 80 = 0.0012314786706610903
+### EVAL:: Epoch 20:: Loss = 0.00026092220515226493 :: ACC = 1.0, AUC = 1.0, EER = 0.0
+### Out of domain:: Best epoch 10 :: ACC = 0.9838709677419355, AUC = 0.999797710718002, EER = 0.0070967741935483875
+[DEBUG] returncode=0
+[DEBUG] stderr_len=0
+recorded: {'exp_name': 'de_resnet50_r03', 'model': 'resnet50', 'train': 'commonvoice-de', 'test': 'mailabs-de', 'in_acc': 1.0, 'in_auc': 1.0, 'in_eer': 0.0, 'cross_acc': 0.9838709677419355, 'cross_auc': 0.999797710718002, 'cross_eer': 0.0070967741935483875}
+
+=== RUN de_septr_r01 (model=septr) ===
+on 500 = 0.29684295654296877
+Training loss on iteration 520 = 0.29394808122888205
+Training loss on iteration 540 = 0.39295182935893536
+Training loss on iteration 560 = 0.3712421353906393
+Training loss on iteration 580 = 0.5511825613677501
+Training loss on iteration 600 = 0.4425597792491317
+Training loss on iteration 620 = 0.4018767228350043
+Training loss on iteration 640 = 0.3418473944067955
+Training loss on iteration 660 = 0.3680000402033329
+Training loss on iteration 680 = 0.37431061789393427
+Training loss on iteration 700 = 0.40991965383291246
+Training loss on iteration 720 = 0.3357737658545375
+Training loss on iteration 740 = 0.363566242903471
+Training loss on iteration 760 = 0.3542532190680504
+Training loss on iteration 780 = 0.3694105548784137
+Training loss on iteration 800 = 0.3591497950255871
+Training loss on iteration 820 = 0.365407706797123
+Training loss on iteration 840 = 0.344425143301487
+Training loss on iteration 860 = 0.24510461688041688
+Training loss on iteration 880 = 0.4021270826458931
+Training loss on iteration 900 = 0.3199199317023158
+Training loss on iteration 920 = 0.37353365439921615
+Training loss on iteration 940 = 0.3425239849835634
+Training loss on iteration 960 = 0.3860396407544613
+Training loss on iteration 980 = 0.3797238655388355
+Training loss on iteration 1000 = 0.344865920394659
+Training loss on iteration 1020 = 0.3302734408527613
+Training loss on iteration 1040 = 0.2919902209192514
+Training loss on iteration 1060 = 0.4552450515329838
+Training loss on iteration 1080 = 0.33457601964473727
+Training loss on iteration 1100 = 0.344518912397325
+Training loss on iteration 1120 = 0.3289273500442505
+Training loss on iteration 1140 = 0.43543594628572463
+Training loss on iteration 1160 = 0.4525891911238432
+### EVAL:: Epoch 20:: Loss = 0.21888680308658504 :: ACC = 0.9153893316983446, AUC = 0.9315936140707273, EER = 0.14653586756591047
+### Out of domain:: Best epoch 4 :: ACC = 0.7974193548387096, AUC = 0.7678847034339231, EER = 0.2903225806451613
+[DEBUG] returncode=0
+[DEBUG] stderr_len=0
+recorded: {'exp_name': 'de_septr_r01', 'model': 'septr', 'train': 'commonvoice-de', 'test': 'mailabs-de', 'in_acc': 0.940220723482526, 'in_auc': 0.9258067462834015, 'in_eer': 0.15450643776824036, 'cross_acc': 0.7974193548387096, 'cross_auc': 0.7678847034339231, 'cross_eer': 0.2903225806451613}
+
+=== RUN de_septr_r02 (model=septr) ===
+00 = 0.2744757237844169
+Training loss on iteration 520 = 0.2071144400164485
+Training loss on iteration 540 = 0.26502298219129444
+Training loss on iteration 560 = 0.331214040517807
+Training loss on iteration 580 = 0.2263070710003376
+Training loss on iteration 600 = 0.38758926317095754
+Training loss on iteration 620 = 0.22514518648386
+Training loss on iteration 640 = 0.2612509520724416
+Training loss on iteration 660 = 0.19212691839784385
+Training loss on iteration 680 = 0.2692700712010264
+Training loss on iteration 700 = 0.4112806160002947
+Training loss on iteration 720 = 0.2404461108148098
+Training loss on iteration 740 = 0.3138575617223978
+Training loss on iteration 760 = 0.38799430988729
+Training loss on iteration 780 = 0.44353733249008653
+Training loss on iteration 800 = 0.4335881195962429
+Training loss on iteration 820 = 0.33727869149297474
+Training loss on iteration 840 = 0.44818715155124667
+Training loss on iteration 860 = 0.27552138809114696
+Training loss on iteration 880 = 0.3458149038255215
+Training loss on iteration 900 = 0.5338473081588745
+Training loss on iteration 920 = 0.4940748803317547
+Training loss on iteration 940 = 0.3933273360133171
+Training loss on iteration 960 = 0.507988715544343
+Training loss on iteration 980 = 0.4159144215285778
+Training loss on iteration 1000 = 0.44976431839168074
+Training loss on iteration 1020 = 0.350254463404417
+Training loss on iteration 1040 = 0.4384354673326015
+Training loss on iteration 1060 = 0.3958441115915775
+Training loss on iteration 1080 = 0.36741078421473505
+Training loss on iteration 1100 = 0.33033138066530227
+Training loss on iteration 1120 = 0.38279890902340413
+Training loss on iteration 1140 = 0.30973037518560886
+Training loss on iteration 1160 = 0.24074029847979544
+### EVAL:: Epoch 20:: Loss = 0.28172245715774696 :: ACC = 0.8724708767627223, AUC = 0.8681327934662602, EER = 0.19987737584304108
+### Out of domain:: Best epoch 19 :: ACC = 0.7719354838709678, AUC = 0.7552499479708636, EER = 0.30193548387096775
+[DEBUG] returncode=0
+[DEBUG] stderr_len=0
+recorded: {'exp_name': 'de_septr_r02', 'model': 'septr', 'train': 'commonvoice-de', 'test': 'mailabs-de', 'in_acc': 0.9414469650521152, 'in_auc': 0.9458307222758322, 'in_eer': 0.12691600245248313, 'cross_acc': 0.7719354838709678, 'cross_auc': 0.7552499479708636, 'cross_eer': 0.30193548387096775}
+
+=== RUN de_septr_r03 (model=septr) ===
+ = 0.46237647756934164
+Training loss on iteration 520 = 0.35279698558151723
+Training loss on iteration 540 = 0.4651252642273903
+Training loss on iteration 560 = 0.433693821169436
+Training loss on iteration 580 = 0.4333083838224411
+Training loss on iteration 600 = 0.4033996731042862
+Training loss on iteration 620 = 0.36405364274978635
+Training loss on iteration 640 = 0.47399602085351944
+Training loss on iteration 660 = 0.4386381030082703
+Training loss on iteration 680 = 0.4076778024435043
+Training loss on iteration 700 = 0.41547913253307345
+Training loss on iteration 720 = 0.4285303527489305
+Training loss on iteration 740 = 0.3155330494046211
+Training loss on iteration 760 = 0.2782780688256025
+Training loss on iteration 780 = 0.3153079029172659
+Training loss on iteration 800 = 0.4465402100235224
+Training loss on iteration 820 = 0.4303593885153532
+Training loss on iteration 840 = 0.35703516118228434
+Training loss on iteration 860 = 0.34175980649888515
+Training loss on iteration 880 = 0.3568239502608776
+Training loss on iteration 900 = 0.33895425498485565
+Training loss on iteration 920 = 0.3382399331778288
+Training loss on iteration 940 = 0.42850416861474516
+Training loss on iteration 960 = 0.4422130662947893
+Training loss on iteration 980 = 0.4197952006012201
+Training loss on iteration 1000 = 0.4634626999497414
+Training loss on iteration 1020 = 0.4388044595718384
+Training loss on iteration 1040 = 0.4732797209173441
+Training loss on iteration 1060 = 0.43838571328669784
+Training loss on iteration 1080 = 0.3825473936740309
+Training loss on iteration 1100 = 0.3858984880149364
+Training loss on iteration 1120 = 0.4537842538207769
+Training loss on iteration 1140 = 0.4268671698868275
+Training loss on iteration 1160 = 0.45328492783010005
+### EVAL:: Epoch 20:: Loss = 0.7965108117983863 :: ACC = 0.5996321275291232, AUC = 0.6550998229054557, EER = 0.38565297363580625
+### Out of domain:: Best epoch 4 :: ACC = 0.7135483870967742, AUC = 0.8036308012486992, EER = 0.27806451612903227
+[DEBUG] returncode=0
+[DEBUG] stderr_len=0
+recorded: {'exp_name': 'de_septr_r03', 'model': 'septr', 'train': 'commonvoice-de', 'test': 'mailabs-de', 'in_acc': 0.9589209074187615, 'in_auc': 0.9880277923027969, 'in_eer': 0.056407112201103615, 'cross_acc': 0.7135483870967742, 'cross_auc': 0.8036308012486992, 'cross_eer': 0.27806451612903227}
+
+Done. Results -> /project/home/p201284/guo/xmad-bench-repro/results_node2_de.csv
+Done (node2_de). Metrics -> /project/home/p201284/guo/xmad-bench-repro/results_node2_de.csv ; logs/checkpoints under detection/experiments/.
