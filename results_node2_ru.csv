@@ -1,2 +1,0 @@
-exp_name,model,train,test,in_acc,in_auc,in_eer,cross_acc,cross_auc,cross_eer
-ru_ast_r01,ast,commonvoice-ru,mailabs-ru,0.9998232903339813,0.9999999063210817,0.00017670966601873123,0.6818050832805026,0.776737401474745,0.29116477436458993

@@ -183,3 +183,8 @@ detection/_run_configs/
 __pycache__/
 *.pyc
 repro_tools/server/test.sh
+
+# Results are RUN OUTPUT, never tracked: git checkout/pull would reset
+# them to the committed version and wipe completed runs.
+results_*.csv
+summary_mean_sd.csv
