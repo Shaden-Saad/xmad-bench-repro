@@ -16,3 +16,10 @@ multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench
   OK  voxpopuli            rows=6672     sep=','
 
 PRE-FLIGHT PASSED — data layout looks correct for this config.
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_ro/config_ro_ast.json
+
+  OK  commonvoice-ro       rows=30820    sep=','
+  OK  voxpopuli            rows=6672     sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
