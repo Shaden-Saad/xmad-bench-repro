@@ -68,18 +68,30 @@ grep -q "_read_meta" "$REPO/detection/data/base_dataset.py" || \
 grep -q "CONFIG_PATH" "$REPO/detection/main.py" || \
   sed -i "s|json.load(open('./config.json'))|json.load(open(os.environ.get('CONFIG_PATH','./config.json')))|" "$REPO/detection/main.py"
 
-# Use 6 models only if the SSL code has been added; otherwise the 4 wired ones.
-if [ -f "$REPO/detection/ssl_models.py" ]; then
-  MODELS="resnet18,resnet50,septr,ast,wav2vec2,whisper"
-else
-  MODELS="resnet18,resnet50,septr,ast"
-fi
+# Models to run. DEFAULT = the paper's 4 CNN/transformer detectors.
+# The two SSL detectors (wav2vec2, whisper) are OPT-IN: they are much heavier
+# (checkpoints ~1.2 GB and ~3 GB, downloaded on first use) and would otherwise
+# silently change the scope of a running sweep. To include them, export:
+#     export XMAD_MODELS="resnet18,resnet50,septr,ast,wav2vec2,whisper"
+MODELS="${XMAD_MODELS:-resnet18,resnet50,septr,ast}"
+
+# Guard: asking for the SSL models without the code present would fail every run.
+case "$MODELS" in
+  *wav2vec2*|*whisper*)
+    if [ ! -f "$REPO/detection/ssl_models.py" ]; then
+      echo "ERROR: XMAD_MODELS requests wav2vec2/whisper but detection/ssl_models.py is missing."
+      echo "  Apply them first:  bash $REPO/repro_tools/add_ssl_models.sh"
+      exit 1
+    fi ;;
+esac
 
 CFGDIR="$STEPB/configs_$TAG"
 echo ">> Generating configs for: $LANGS  (models: $MODELS, tag=$TAG, GPU=${CUDA_VISIBLE_DEVICES:-default})"
 python "$STEPB/make_configs.py" "$DATA" "$CFGDIR" "$LANGS" "$MODELS"
 
-python "$STEPB/run_stepB.py" --repo "$REPO" --configs "$CFGDIR" \
+# -u = unbuffered, so the log streams live and `tail -f job_<tag>.log` shows progress
+# instead of the file staying empty for hours and dumping everything at the end.
+python -u "$STEPB/run_stepB.py" --repo "$REPO" --configs "$CFGDIR" \
        --results "$REPO/results_$TAG.csv" --repeats 3
 
 echo "Done ($TAG). Metrics -> $REPO/results_$TAG.csv ; logs/checkpoints under detection/experiments/."

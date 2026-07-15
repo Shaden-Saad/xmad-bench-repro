@@ -63,20 +63,28 @@ def run_one(repo, cfg_path, repeat, results_writer, preflight):
     # detection-only on PYTHONPATH (code is self-contained after the import fix;
     # putting the repo root here would re-trigger the root utils.py collision).
     # CUDA_VISIBLE_DEVICES is inherited from the environment (set it per GPU).
-    env = dict(os.environ, PYTHONPATH=det, CONFIG_PATH=cfg_file)
-    print(f"\n=== RUN {cfg['exp_name']} (model={cfg['model_type']}) ===")
-    proc = subprocess.run([sys.executable, "main.py"], cwd=det, env=env,
-                          capture_output=True, text=True)
-    sys.stdout.write(proc.stdout[-2000:])
-    
-    print(f"[DEBUG] returncode={proc.returncode}")
-    print(f"[DEBUG] stderr_len={len(proc.stderr)}")
+    # PYTHONUNBUFFERED so the child streams instead of block-buffering into the pipe.
+    env = dict(os.environ, PYTHONPATH=det, CONFIG_PATH=cfg_file, PYTHONUNBUFFERED="1")
+    print(f"\n=== RUN {cfg['exp_name']} (model={cfg['model_type']}) ===", flush=True)
 
+    # Stream the child's output LIVE, line by line, while keeping a copy for parsing.
+    # (Previously this used capture_output=True, which hid ALL output until the run
+    #  finished — so a multi-hour job looked frozen and progress was invisible.
+    #  stderr is merged into stdout so errors appear in the log too.)
+    proc = subprocess.Popen([sys.executable, "-u", "main.py"], cwd=det, env=env,
+                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                            text=True, bufsize=1)
+    captured = []
+    for line in proc.stdout:
+        captured.append(line)
+        sys.stdout.write(line)
+        sys.stdout.flush()          # so `tail -f job_*.log` shows progress in real time
+    proc.wait()
+    out = "".join(captured)
     if proc.returncode != 0:
-        sys.stderr.write(proc.stderr[-2000:] or "(stderr is empty)")
-        print(f"FAILED: {cfg['exp_name']}")
+        print(f"FAILED: {cfg['exp_name']} (returncode={proc.returncode})", flush=True)
         return
-    best_in, cross = parse_metrics(proc.stdout)
+    best_in, cross = parse_metrics(out)
     row = {
         "exp_name": cfg["exp_name"], "model": cfg["model_type"],
         "train": ",".join(cfg["dataset"].get("train_datasets", [cfg["dataset"]["dataset_train"]])),
@@ -85,7 +93,7 @@ def run_one(repo, cfg_path, repeat, results_writer, preflight):
         "cross_acc": cross and cross["acc"], "cross_auc": cross and cross["auc"], "cross_eer": cross and cross["eer"],
     }
     results_writer.writerow(row)
-    print("recorded:", row)
+    print("recorded:", row, flush=True)
 
 def main():
     ap = argparse.ArgumentParser()
