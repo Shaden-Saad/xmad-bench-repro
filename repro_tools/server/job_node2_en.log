@@ -1,103 +1,11 @@
 >> activated env: /project/home/p201284/guo/xmad-bench-repro/venv/bin/activate  (Python 3.13.12)
 >> torch 2.12.0+cu132 | CUDA available: True
->> Generating configs for: en  (models: resnet18,resnet50,septr,ast, tag=node2_en, GPU=2)
+>> Generating configs for: en  (models: resnet18,resnet50,septr,ast, tag=node2_en, GPU=1)
 Wrote 4 configs to /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/  (languages: en)
 root_path: /project/home/p201284/guo/xmad_data
 multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_ast.json
 
+  OK  commonvoice-en       rows=96368    sep=','
+  OK  mailabs-en           rows=39690    sep=','
 
-PRE-FLIGHT FAILED:
-  - [commonvoice-en] meta.csv missing columns {'sample_name', 'is_fake', 'split'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
-  - [mailabs-en] meta.csv missing columns {'sample_name', 'is_fake'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta'])
-root_path: /project/home/p201284/guo/xmad_data
-multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_ast.json
-
-
-PRE-FLIGHT FAILED:
-  - [commonvoice-en] meta.csv missing columns {'is_fake', 'sample_name', 'split'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
-  - [mailabs-en] meta.csv missing columns {'is_fake', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta'])
-root_path: /project/home/p201284/guo/xmad_data
-multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_ast.json
-
-
-PRE-FLIGHT FAILED:
-  - [commonvoice-en] meta.csv missing columns {'split', 'is_fake', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
-  - [mailabs-en] meta.csv missing columns {'is_fake', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta'])
-root_path: /project/home/p201284/guo/xmad_data
-multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_resnet18.json
-
-
-PRE-FLIGHT FAILED:
-  - [commonvoice-en] meta.csv missing columns {'is_fake', 'split', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
-  - [mailabs-en] meta.csv missing columns {'is_fake', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta'])
-root_path: /project/home/p201284/guo/xmad_data
-multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_resnet18.json
-
-
-PRE-FLIGHT FAILED:
-  - [commonvoice-en] meta.csv missing columns {'sample_name', 'is_fake', 'split'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
-  - [mailabs-en] meta.csv missing columns {'sample_name', 'is_fake'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta'])
-root_path: /project/home/p201284/guo/xmad_data
-multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_resnet18.json
-
-
-PRE-FLIGHT FAILED:
-  - [commonvoice-en] meta.csv missing columns {'is_fake', 'sample_name', 'split'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
-  - [mailabs-en] meta.csv missing columns {'is_fake', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta'])
-root_path: /project/home/p201284/guo/xmad_data
-multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_resnet50.json
-
-
-PRE-FLIGHT FAILED:
-  - [commonvoice-en] meta.csv missing columns {'is_fake', 'sample_name', 'split'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
-  - [mailabs-en] meta.csv missing columns {'is_fake', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta'])
-root_path: /project/home/p201284/guo/xmad_data
-multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_resnet50.json
-
-
-PRE-FLIGHT FAILED:
-  - [commonvoice-en] meta.csv missing columns {'split', 'sample_name', 'is_fake'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
-  - [mailabs-en] meta.csv missing columns {'sample_name', 'is_fake'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta'])
-root_path: /project/home/p201284/guo/xmad_data
-multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_resnet50.json
-
-
-PRE-FLIGHT FAILED:
-  - [commonvoice-en] meta.csv missing columns {'split', 'is_fake', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
-  - [mailabs-en] meta.csv missing columns {'is_fake', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta'])
-root_path: /project/home/p201284/guo/xmad_data
-multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_septr.json
-
-
-PRE-FLIGHT FAILED:
-  - [commonvoice-en] meta.csv missing columns {'sample_name', 'is_fake', 'split'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
-  - [mailabs-en] meta.csv missing columns {'sample_name', 'is_fake'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta'])
-root_path: /project/home/p201284/guo/xmad_data
-multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_septr.json
-
-
-PRE-FLIGHT FAILED:
-  - [commonvoice-en] meta.csv missing columns {'is_fake', 'split', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
-  - [mailabs-en] meta.csv missing columns {'is_fake', 'sample_name'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta'])
-root_path: /project/home/p201284/guo/xmad_data
-multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_septr.json
-
-
-PRE-FLIGHT FAILED:
-  - [commonvoice-en] meta.csv missing columns {'sample_name', 'is_fake', 'split'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta,split'])
-  - [mailabs-en] meta.csv missing columns {'sample_name', 'is_fake'} (sep='\t', got ['sample_name,is_fake,speaker_id,meta'])
-SKIP /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_ast.json: preflight failed
-SKIP /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_ast.json: preflight failed
-SKIP /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_ast.json: preflight failed
-SKIP /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_resnet18.json: preflight failed
-SKIP /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_resnet18.json: preflight failed
-SKIP /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_resnet18.json: preflight failed
-SKIP /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_resnet50.json: preflight failed
-SKIP /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_resnet50.json: preflight failed
-SKIP /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_resnet50.json: preflight failed
-SKIP /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_septr.json: preflight failed
-SKIP /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_septr.json: preflight failed
-SKIP /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_septr.json: preflight failed
-
-Done. Results -> /project/home/p201284/guo/xmad-bench-repro/results_node2_en.csv
-Done (node2_en). Metrics -> /project/home/p201284/guo/xmad-bench-repro/results_node2_en.csv ; logs/checkpoints under detection/experiments/.
+PRE-FLIGHT PASSED — data layout looks correct for this config.

@@ -9,3 +9,52 @@ multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench
   OK  aishell3             rows=2002     sep=','
 
 PRE-FLIGHT PASSED — data layout looks correct for this config.
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_zh/config_zh_ast.json
+
+  OK  commonvoice-zh       rows=13776    sep=','
+  OK  aishell3             rows=2002     sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_zh/config_zh_ast.json
+
+  OK  commonvoice-zh       rows=13776    sep=','
+  OK  aishell3             rows=2002     sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_zh/config_zh_resnet18.json
+
+  OK  commonvoice-zh       rows=13776    sep=','
+  OK  aishell3             rows=2002     sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_zh/config_zh_resnet18.json
+
+  OK  commonvoice-zh       rows=13776    sep=','
+  OK  aishell3             rows=2002     sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_zh/config_zh_resnet18.json
+
+  OK  commonvoice-zh       rows=13776    sep=','
+  OK  aishell3             rows=2002     sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_zh/config_zh_resnet50.json
+
+  OK  commonvoice-zh       rows=13776    sep=','
+  OK  aishell3             rows=2002     sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node1_zh/config_zh_resnet50.json
+
+  OK  commonvoice-zh       rows=13776    sep=','
+  OK  aishell3             rows=2002     sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
