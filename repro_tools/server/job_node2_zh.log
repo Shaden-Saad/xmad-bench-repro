@@ -1,0 +1,35 @@
+>> activated env: /project/home/p201284/guo/xmad-bench-repro/venv/bin/activate  (Python 3.13.12)
+>> torch 2.12.0+cu132 | CUDA available: True
+Applying resumable-training patch...
+  patched: /project/home/p201284/guo/xmad-bench-repro/detection/trainer.py
+  trainer.py is valid Python.
+Done. Killed runs now continue from their last completed epoch.
+>> Generating configs for: zh  (models: resnet18,resnet50,septr,ast, tag=node2_zh, GPU=2)
+Wrote 4 configs to /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_zh/  (languages: zh)
+RECOVERED zh_ast_r01: complete on disk, no retraining needed
+recorded: {'exp_name': 'zh_ast_r01', 'model': 'ast', 'train': 'commonvoice-zh', 'test': 'aishell3', 'in_acc': 0.9940298507462687, 'in_auc': 0.9995406054305587, 'in_eer': 0.004975124378109453, 'cross_acc': 0.7702297702297702, 'cross_auc': 0.8612576234953857, 'cross_eer': 0.2217782217782218}
+RECOVERED zh_ast_r02: complete on disk, no retraining needed
+recorded: {'exp_name': 'zh_ast_r02', 'model': 'ast', 'train': 'commonvoice-zh', 'test': 'aishell3', 'in_acc': 0.9955223880597015, 'in_auc': 0.9999049528477018, 'in_eer': 0.0029850746268656717, 'cross_acc': 0.7517482517482518, 'cross_auc': 0.8211957872297533, 'cross_eer': 0.25674325674325676}
+RECOVERED zh_ast_r03: complete on disk, no retraining needed
+recorded: {'exp_name': 'zh_ast_r03', 'model': 'ast', 'train': 'commonvoice-zh', 'test': 'aishell3', 'in_acc': 0.9950248756218906, 'in_auc': 0.9995673374421424, 'in_eer': 0.005970149253731343, 'cross_acc': 0.7892107892107892, 'cross_auc': 0.8735779704810674, 'cross_eer': 0.2017982017982018}
+RECOVERED zh_resnet18_r01: complete on disk, no retraining needed
+recorded: {'exp_name': 'zh_resnet18_r01', 'model': 'resnet18', 'train': 'commonvoice-zh', 'test': 'aishell3', 'in_acc': 1.0, 'in_auc': 1.0, 'in_eer': 0.0, 'cross_acc': 0.6313686313686314, 'cross_auc': 0.8449911726635003, 'cross_eer': 0.22577422577422576}
+RECOVERED zh_resnet18_r02: complete on disk, no retraining needed
+recorded: {'exp_name': 'zh_resnet18_r02', 'model': 'resnet18', 'train': 'commonvoice-zh', 'test': 'aishell3', 'in_acc': 1.0, 'in_auc': 1.0, 'in_eer': 0.0, 'cross_acc': 0.6463536463536463, 'cross_auc': 0.8036229504760973, 'cross_eer': 0.28471528471528473}
+RECOVERED zh_resnet18_r03: complete on disk, no retraining needed
+recorded: {'exp_name': 'zh_resnet18_r03', 'model': 'resnet18', 'train': 'commonvoice-zh', 'test': 'aishell3', 'in_acc': 1.0, 'in_auc': 1.0, 'in_eer': 0.0, 'cross_acc': 0.6708291708291708, 'cross_auc': 0.8333265136461938, 'cross_eer': 0.2517482517482518}
+RECOVERED zh_resnet50_r01: complete on disk, no retraining needed
+recorded: {'exp_name': 'zh_resnet50_r01', 'model': 'resnet50', 'train': 'commonvoice-zh', 'test': 'aishell3', 'in_acc': 1.0, 'in_auc': 1.0, 'in_eer': 0.0, 'cross_acc': 0.6913086913086913, 'cross_auc': 0.8450380788043126, 'cross_eer': 0.24075924075924077}
+RECOVERED zh_resnet50_r02: complete on disk, no retraining needed
+recorded: {'exp_name': 'zh_resnet50_r02', 'model': 'resnet50', 'train': 'commonvoice-zh', 'test': 'aishell3', 'in_acc': 1.0, 'in_auc': 1.0, 'in_eer': 0.0, 'cross_acc': 0.6648351648351648, 'cross_auc': 0.8283195326152368, 'cross_eer': 0.24475524475524477}
+RECOVERED zh_resnet50_r03: complete on disk, no retraining needed
+recorded: {'exp_name': 'zh_resnet50_r03', 'model': 'resnet50', 'train': 'commonvoice-zh', 'test': 'aishell3', 'in_acc': 1.0, 'in_auc': 1.0, 'in_eer': 0.0, 'cross_acc': 0.6903096903096904, 'cross_auc': 0.8510660169001827, 'cross_eer': 0.22277722277722278}
+RECOVERED zh_septr_r01: complete on disk, no retraining needed
+recorded: {'exp_name': 'zh_septr_r01', 'model': 'septr', 'train': 'commonvoice-zh', 'test': 'aishell3', 'in_acc': 0.9756218905472637, 'in_auc': 0.9978941115318927, 'in_eer': 0.021890547263681594, 'cross_acc': 0.6508491508491508, 'cross_auc': 0.7804792609987414, 'cross_eer': 0.2977022977022977}
+RECOVERED zh_septr_r02: complete on disk, no retraining needed
+recorded: {'exp_name': 'zh_septr_r02', 'model': 'septr', 'train': 'commonvoice-zh', 'test': 'aishell3', 'in_acc': 0.9492537313432836, 'in_auc': 0.9877270364594936, 'in_eer': 0.05572139303482587, 'cross_acc': 0.7052947052947053, 'cross_auc': 0.7988634741881495, 'cross_eer': 0.26573426573426573}
+RECOVERED zh_septr_r03: complete on disk, no retraining needed
+recorded: {'exp_name': 'zh_septr_r03', 'model': 'septr', 'train': 'commonvoice-zh', 'test': 'aishell3', 'in_acc': 0.9522388059701492, 'in_auc': 0.5174763000915819, 'in_eer': 0.44676616915422884, 'cross_acc': 0.5759240759240759, 'cross_auc': 0.7979073873179767, 'cross_eer': 0.27472527472527475}
+
+Done. Results -> /project/home/p201284/guo/xmad-bench-repro/results_node2_zh.csv
+Done (node2_zh). Metrics -> /project/home/p201284/guo/xmad-bench-repro/results_node2_zh.csv ; logs/checkpoints under detection/experiments/.

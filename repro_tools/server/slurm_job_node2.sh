@@ -56,7 +56,8 @@ print('>> torch', torch.__version__, '| CUDA available:', torch.cuda.is_availabl
     exit 1
 }
 
-LANGS=(ru de en es)
+# LANGS=(ru de en es)
+LANGS=(ru en zh ro)
 
 for i in "${!LANGS[@]}"; do
     LANG=${LANGS[$i]}

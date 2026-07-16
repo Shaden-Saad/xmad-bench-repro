@@ -1,0 +1,7 @@
+>> env: /project/home/p201284/guo/xmad-bench-repro/venv  (Python 3.13.12)
+>> language=ar  repeat=r02  (array task 2 of 3)
+>> torch 2.12.0+cu132 | CUDA available: True | GPUs visible: 4
+>> GPU 0 : ar / resnet18 / r02  -> results_ar_resnet18_r02.csv
+>> GPU 1 : ar / resnet50 / r02  -> results_ar_resnet50_r02.csv
+>> GPU 2 : ar / septr / r02  -> results_ar_septr_r02.csv
+>> GPU 3 : ar / ast / r02  -> results_ar_ast_r02.csv

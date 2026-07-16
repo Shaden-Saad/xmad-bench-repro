@@ -77,18 +77,48 @@ class Trainer:
         self.logs_writer.add_scalar('Validation Loss', running_eval_loss, (epoch + 1) * len(self.train_dataloader))
 
     def train(self):
-        if self.config['resume_training'] is True:
-            checkpoint = torch.load(os.path.join(self.config['exp_path'],
-                                                 self.config['exp_name'],
-                                                 'latest_checkpoint.pkl'),
-                                    map_location=self.config['device'], weights_only=False)
-            self.network.load_state_dict(checkpoint['model_weights'])
-            self.optimizer.load_state_dict(checkpoint['optimizer'])
+        # [repro] resumable training
+        # Resume where the last checkpoint left off, so the TOTAL number of epochs is
+        # always train_epochs. (The released code re-ran the full 1..train_epochs loop
+        # on top of the loaded weights, which trained ~2x the intended epochs.)
+        start_epoch = 1
+        if self.config.get('resume_training') is True:
+            ckpt_path = os.path.join(self.config['exp_path'], self.config['exp_name'],
+                                     'latest_checkpoint.pkl')
+            if os.path.exists(ckpt_path):
+                checkpoint = torch.load(ckpt_path, map_location=self.config['device'],
+                                        weights_only=False)
+                self.network.load_state_dict(checkpoint['model_weights'])
+                self.optimizer.load_state_dict(checkpoint['optimizer'])
+                if 'lr_scheduler' in checkpoint:
+                    self.lr_scheduler.load_state_dict(checkpoint['lr_scheduler'])
+                # Restore the best score, otherwise best_model.pkl would be overwritten
+                # by the first post-resume epoch even if it is worse. best_model.pkl's
+                # 'stats' is authoritative (written exactly when best_metric improves),
+                # so take the max - this also repairs old-format checkpoints.
+                self.best_metric = checkpoint.get('best_metric', 0.0)
+                best_path = os.path.join(self.config['exp_path'], self.config['exp_name'],
+                                         'best_model.pkl')
+                if os.path.exists(best_path):
+                    prev = torch.load(best_path, map_location='cpu', weights_only=False)
+                    self.best_metric = max(self.best_metric, prev.get('stats', 0.0))
+                start_epoch = checkpoint['epoch'] + 1
+                msg = (f"### RESUME:: checkpoint at epoch {checkpoint['epoch']}; continuing at "
+                       f"epoch {start_epoch} of {self.config['train_epochs']} "
+                       f"(best ACC so far = {self.best_metric})")
+                print(msg, flush=True)
+                save_logs_eval(os.path.join(self.config['exp_path'], self.config['exp_name']), msg)
+            else:
+                print('### RESUME:: resume_training=True but no latest_checkpoint.pkl found; '
+                      'training from scratch', flush=True)
 
-        for i in range(1, self.config['train_epochs'] + 1):
+        if start_epoch > self.config['train_epochs']:
+            print(f"### RESUME:: all {self.config['train_epochs']} epochs already done; "
+                  f"skipping training, going straight to the cross-domain test", flush=True)
+
+        for i in range(start_epoch, self.config['train_epochs'] + 1):
             print('Training on epoch ' + str(i))
             self.train_epoch(i)
-            self.save_net_state(i, latest=True)
 
             if i % self.config['eval_net_epoch'] == 0:
                 self.eval_net(i)
@@ -98,13 +128,20 @@ class Trainer:
 
             self.lr_scheduler.step()
 
+            # Saved LAST, so "checkpoint epoch i" means epoch i is fully complete
+            # (trained + evaluated + scheduler stepped). Resuming at i+1 is then exact.
+            self.save_net_state(i, latest=True)
+
     def save_net_state(self, epoch, latest=False, best=False):
         if latest is True:
             path_to_save = os.path.join(self.config['exp_path'], self.config['exp_name'], f'latest_checkpoint.pkl')
             to_save = {
                 'epoch': epoch,
                 'model_weights': self.network.state_dict(),
-                'optimizer': self.optimizer.state_dict()
+                'optimizer': self.optimizer.state_dict(),
+                # needed for an exact resume (see fix_resume_training.py)
+                'lr_scheduler': self.lr_scheduler.state_dict(),
+                'best_metric': self.best_metric,
             }
             torch.save(to_save, path_to_save)
         elif best is True:

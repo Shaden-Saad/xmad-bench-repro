@@ -1,0 +1,14 @@
+>> activated env: /project/home/p201284/guo/xmad-bench-repro/venv/bin/activate  (Python 3.13.12)
+>> torch 2.12.0+cu132 | CUDA available: True
+Applying resumable-training patch...
+  already patched: /project/home/p201284/guo/xmad-bench-repro/detection/trainer.py
+  trainer.py is valid Python.
+Done. Killed runs now continue from their last completed epoch.
+>> Generating configs for: ar  (models: ast, tag=ar_ast_r01, GPU=3)
+Wrote 1 configs to /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_ar_ast_r01/  (languages: ar)
+>> single-repeat mode: this process runs ONLY repeat r01
+RECOVERED ar_ast_r01: complete on disk, no retraining needed
+recorded: {'exp_name': 'ar_ast_r01', 'model': 'ast', 'train': 'commonvoice-ar', 'test': 'masc', 'in_acc': 0.9996583365872705, 'in_auc': 0.9999995616523405, 'in_eer': 0.0003904724716907458, 'cross_acc': 0.7630930375847197, 'cross_auc': 0.827054929731991, 'cross_eer': 0.25092421441774493}
+
+Done. Results -> /project/home/p201284/guo/xmad-bench-repro/results_ar_ast_r01.csv
+Done (ar_ast_r01). Metrics -> /project/home/p201284/guo/xmad-bench-repro/results_ar_ast_r01.csv ; logs/checkpoints under detection/experiments/.

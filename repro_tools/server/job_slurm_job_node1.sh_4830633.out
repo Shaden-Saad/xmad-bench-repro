@@ -1,5 +1,0 @@
->> env: /project/home/p201284/guo/xmad-bench-repro/venv  (Python 3.13.12)
->> torch 2.12.0+cu132 | CUDA available: True
->> Launching ar on GPU 0
->> Launching zh on GPU 1
->> Launching ro on GPU 2
