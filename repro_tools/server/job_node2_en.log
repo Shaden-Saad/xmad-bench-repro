@@ -9,3 +9,10 @@ multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench
   OK  mailabs-en           rows=39690    sep=','
 
 PRE-FLIGHT PASSED — data layout looks correct for this config.
+root_path: /project/home/p201284/guo/xmad_data
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_node2_en/config_en_ast.json
+
+  OK  commonvoice-en       rows=96368    sep=','
+  OK  mailabs-en           rows=39690    sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
