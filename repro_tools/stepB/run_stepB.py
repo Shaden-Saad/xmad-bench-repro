@@ -38,10 +38,33 @@ def parse_metrics(stdout):
             cross = rec
     return best_in, cross
 
-def run_one(repo, cfg_path, repeat, results_writer, preflight):
+def already_done(results_path):
+    """exp_names already recorded in the results CSV (so we can skip them).
+
+    run_stepB flushes after every completed run, so a job killed by the SLURM time
+    limit still leaves its finished runs on disk. Re-running those wastes GPU time.
+    """
+    done = set()
+    if results_path and os.path.exists(results_path):
+        try:
+            with open(results_path, newline="") as f:
+                for row in csv.DictReader(f):
+                    n = (row.get("exp_name") or "").strip()
+                    # only count rows that actually carry a metric
+                    if n and (row.get("cross_acc") or "").strip():
+                        done.add(n)
+        except OSError:
+            pass
+    return done
+
+
+def run_one(repo, cfg_path, repeat, results_writer, preflight, done=frozenset()):
     cfg = json.load(open(cfg_path))
     base_name = cfg["exp_name"]
     cfg["exp_name"] = f"{base_name}_r{repeat:02d}"
+    if cfg["exp_name"] in done:
+        print(f"SKIP {cfg['exp_name']}: already completed (present in results CSV)", flush=True)
+        return
     det = os.path.join(repo, "detection")
 
     if preflight:
@@ -102,17 +125,27 @@ def main():
     ap.add_argument("--results", default="results.csv")
     ap.add_argument("--repeats", type=int, default=3)
     ap.add_argument("--no-preflight", action="store_true")
+    ap.add_argument("--redo-all", action="store_true",
+                    help="re-run everything, even runs already present in the results CSV "
+                         "(default: completed runs are skipped)")
     a = ap.parse_args()
 
     cfgs = sorted(glob.glob(os.path.join(a.configs, "*.json"))) if os.path.isdir(a.configs) else [a.configs]
     fields = ["exp_name","model","train","test","in_acc","in_auc","in_eer","cross_acc","cross_auc","cross_eer"]
+
+    # Skip runs already completed (e.g. after a job was killed by the time limit).
+    done = set() if a.redo_all else already_done(a.results)
+    if done:
+        print(f">> {len(done)} run(s) already completed in {a.results} — these will be SKIPPED.", flush=True)
+        print(f"   (use --redo-all to force re-running them)", flush=True)
+
     new = not os.path.exists(a.results)
     with open(a.results, "a", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=fields)
         if new: w.writeheader()
         for cfg in cfgs:
             for r in range(1, a.repeats + 1):
-                run_one(a.repo, cfg, r, w, preflight=not a.no_preflight)
+                run_one(a.repo, cfg, r, w, preflight=not a.no_preflight, done=done)
                 fh.flush()
     print(f"\nDone. Results -> {a.results}")
 
