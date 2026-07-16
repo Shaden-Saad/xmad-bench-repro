@@ -67,6 +67,12 @@ grep -q "_read_meta" "$REPO/detection/data/base_dataset.py" || \
 #  (b) make main.py read $CONFIG_PATH so parallel runs never share config.json
 grep -q "CONFIG_PATH" "$REPO/detection/main.py" || \
   sed -i "s|json.load(open('./config.json'))|json.load(open(os.environ.get('CONFIG_PATH','./config.json')))|" "$REPO/detection/main.py"
+#  (d) make training RESUMABLE, so a job killed by the time limit continues from
+#      its last completed epoch instead of losing the run. The repo's own
+#      resume_training flag re-runs the FULL epoch loop on top of the loaded
+#      weights (~2x the intended epochs), which would not reproduce the paper.
+python "$REPO/repro_tools/fix_resume_training.py" "$REPO" || {
+  echo "ERROR: could not apply the resumable-training patch."; exit 1; }
 
 # Models to run. DEFAULT = the paper's 4 CNN/transformer detectors.
 # The two SSL detectors (wav2vec2, whisper) are OPT-IN: they are much heavier
@@ -89,9 +95,19 @@ CFGDIR="$STEPB/configs_$TAG"
 echo ">> Generating configs for: $LANGS  (models: $MODELS, tag=$TAG, GPU=${CUDA_VISIBLE_DEVICES:-default})"
 python "$STEPB/make_configs.py" "$DATA" "$CFGDIR" "$LANGS" "$MODELS"
 
+# Optionally run ONE repeat only, so each (model, repeat) can have its own GPU.
+# Needed for the big languages: ar/en/ru have 4.5-6.5x German's training rows, and
+# German's 12 runs only just fit in the 48h limit, so 3 repeats queued on one GPU
+# cannot finish. Set XMAD_REPEAT=1|2|3 (slurm_job_big_lang.sh does this per array task).
+REPEAT_ARG="--repeats 3"
+if [ -n "${XMAD_REPEAT:-}" ]; then
+  REPEAT_ARG="--repeat-index $XMAD_REPEAT"
+  echo ">> single-repeat mode: this process runs ONLY repeat r0$XMAD_REPEAT"
+fi
+
 # -u = unbuffered, so the log streams live and `tail -f job_<tag>.log` shows progress
 # instead of the file staying empty for hours and dumping everything at the end.
 python -u "$STEPB/run_stepB.py" --repo "$REPO" --configs "$CFGDIR" \
-       --results "$REPO/results_$TAG.csv" --repeats 3
+       --results "$REPO/results_$TAG.csv" $REPEAT_ARG
 
 echo "Done ($TAG). Metrics -> $REPO/results_$TAG.csv ; logs/checkpoints under detection/experiments/."

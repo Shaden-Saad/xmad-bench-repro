@@ -188,3 +188,7 @@ repro_tools/server/test.sh
 # them to the committed version and wipe completed runs.
 results_*.csv
 summary_mean_sd.csv
+
+# ...but DO track the frozen, completed results (archive, not live run output).
+!repro_tools/results_final/results_*.csv
+!repro_tools/results_final/summary_mean_sd.csv
