@@ -5,3 +5,5 @@
 >> GPU 1 : ar / resnet50 / r03  -> results_ar_resnet50_r03.csv
 >> GPU 2 : ar / septr / r03  -> results_ar_septr_r03.csv
 >> GPU 3 : ar / ast / r03  -> results_ar_ast_r03.csv
+Finished: ar repeat r03 (all 4 models).
+Metrics -> /project/home/p201284/guo/xmad-bench-repro/results_ar_*_r03.csv
