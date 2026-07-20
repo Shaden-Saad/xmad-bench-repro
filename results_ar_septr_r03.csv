@@ -1,0 +1,2 @@
+exp_name,model,train,test,in_acc,in_auc,in_eer,cross_acc,cross_auc,cross_eer
+ar_septr_r03,septr,commonvoice-ar,masc,0.988188207731355,0.9715999697197061,0.08512299882858258,0.3514325323475046,0.3260205982698645,0.6350893407270487

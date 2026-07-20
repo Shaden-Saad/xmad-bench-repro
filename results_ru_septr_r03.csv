@@ -1,0 +1,2 @@
+exp_name,model,train,test,in_acc,in_auc,in_eer,cross_acc,cross_auc,cross_eer
+ru_septr_r03,septr,commonvoice-ru,mailabs-ru,0.9859515815515109,0.9921833373870284,0.04435412617070154,0.29361420091061036,0.5878491293752511,0.42556624978387414

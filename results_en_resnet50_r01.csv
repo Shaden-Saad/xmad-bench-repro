@@ -1,0 +1,2 @@
+exp_name,model,train,test,in_acc,in_auc,in_eer,cross_acc,cross_auc,cross_eer
+en_resnet50_r01,resnet50,commonvoice-en,mailabs-en,1.0,1.0,0.0,0.736079617031998,0.7538610652308477,0.309599395313681

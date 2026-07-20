@@ -1,0 +1,445 @@
+>> activated env: /project/home/p201284/guo/xmad-bench-repro/venv/bin/activate  (Python 3.13.12)
+>> torch 2.12.0+cu132 | CUDA available: True
+Applying resumable-training patch...
+  already patched: /project/home/p201284/guo/xmad-bench-repro/detection/trainer.py
+  trainer.py is valid Python.
+Done. Killed runs now continue from their last completed epoch.
+>> Generating configs for: en  (models: resnet18, tag=en_resnet18_r03, GPU=1)
+Wrote 1 configs to /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_en_resnet18_r03/  (languages: en)
+>> single-repeat mode: this process runs ONLY repeat r03
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_en_resnet18_r03/config_en_resnet18.json
+
+  OK  commonvoice-en       rows=96368    sep=','
+  OK  mailabs-en           rows=39690    sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+
+=== RUN en_resnet18_r03 (model=resnet18) ===
+commonvoice-en
+commonvoice-en
+Training on epoch 1
+Training loss on iteration 0 = 1.0519187450408936
+Training loss on iteration 20 = 0.14386582635343076
+Training loss on iteration 40 = 0.04350458118133247
+Training loss on iteration 60 = 0.026796678942628206
+Training loss on iteration 80 = 0.027776223560795187
+Training loss on iteration 100 = 0.020617309119552375
+Training loss on iteration 120 = 0.019027646002359688
+Training loss on iteration 140 = 0.01303500811336562
+Training loss on iteration 160 = 0.014013179729226976
+Training loss on iteration 180 = 0.009940759665914812
+Training loss on iteration 200 = 0.015425827447324991
+Training loss on iteration 220 = 0.0068781300855334845
+Training loss on iteration 240 = 0.006600702609284781
+Training loss on iteration 260 = 0.007551121670985594
+Training loss on iteration 280 = 0.011880018635565648
+Training loss on iteration 300 = 0.005997308803489432
+Training loss on iteration 320 = 0.004303308004455175
+Training loss on iteration 340 = 0.010546387985232285
+Training loss on iteration 360 = 0.010760714224306866
+### EVAL:: Epoch 1:: Loss = 0.00356381096870862 :: ACC = 0.9988300262074129, AUC = 0.9999949188708371, EER = 0.0007487832272557095
+Training on epoch 2
+Training loss on iteration 0 = 0.0017826494295150042
+Training loss on iteration 20 = 0.003534384576778393
+Training loss on iteration 40 = 0.005431656155633391
+Training loss on iteration 60 = 0.005776967415295075
+Training loss on iteration 80 = 0.008323243481572717
+Training loss on iteration 100 = 0.004355261586897541
+Training loss on iteration 120 = 0.003145061402756255
+Training loss on iteration 140 = 0.005494984042888973
+Training loss on iteration 160 = 0.0038691786205163224
+Training loss on iteration 180 = 0.004201988201020868
+Training loss on iteration 200 = 0.004958766195704812
+Training loss on iteration 220 = 0.007425225040060468
+Training loss on iteration 240 = 0.0033673771988105726
+Training loss on iteration 260 = 0.0034057873803249096
+Training loss on iteration 280 = 0.010300837786780903
+Training loss on iteration 300 = 0.004058580493438058
+Training loss on iteration 320 = 0.005241648864466697
+Training loss on iteration 340 = 0.004236735391168622
+Training loss on iteration 360 = 0.0047689143400930336
+### EVAL:: Epoch 2:: Loss = 0.009243927163098221 :: ACC = 0.9965368775739424, AUC = 0.9999882520789528, EER = 0.0010295769374766006
+Training on epoch 3
+Training loss on iteration 0 = 0.0010411492548882961
+Training loss on iteration 20 = 0.004338828726031352
+Training loss on iteration 40 = 0.0024636507499963046
+Training loss on iteration 60 = 0.0023095539612768335
+Training loss on iteration 80 = 0.005758128064189805
+Training loss on iteration 100 = 0.005589996485650772
+Training loss on iteration 120 = 0.004326312834746204
+Training loss on iteration 140 = 0.0033050114645448046
+Training loss on iteration 160 = 0.001297577206423739
+Training loss on iteration 180 = 0.008402845015370985
+Training loss on iteration 200 = 0.004957830261264462
+Training loss on iteration 220 = 0.0035912171255404247
+Training loss on iteration 240 = 0.003660131465403538
+Training loss on iteration 260 = 0.004779131430768757
+Training loss on iteration 280 = 0.0035813770728054806
+Training loss on iteration 300 = 0.0031442121064173987
+Training loss on iteration 320 = 0.003169628995965468
+Training loss on iteration 340 = 0.0022524894169691835
+Training loss on iteration 360 = 0.0013206520261519472
+### EVAL:: Epoch 3:: Loss = 0.0022869151316622653 :: ACC = 0.9993448146761512, AUC = 0.9999990976615453, EER = 0.0005615874204417821
+Training on epoch 4
+Training loss on iteration 0 = 0.0025709993205964565
+Training loss on iteration 20 = 0.0028448259732613223
+Training loss on iteration 40 = 0.0015443509104443366
+Training loss on iteration 60 = 0.005113791146868607
+Training loss on iteration 80 = 0.0014561000549292657
+Training loss on iteration 100 = 0.0032729048218243404
+Training loss on iteration 120 = 0.0020388765797179076
+Training loss on iteration 140 = 0.002650961288054532
+Training loss on iteration 160 = 0.003070628610566928
+Training loss on iteration 180 = 0.0018433698602166259
+Training loss on iteration 200 = 0.0010483602733074803
+Training loss on iteration 220 = 0.0015102933649814077
+Training loss on iteration 240 = 0.0021481757125002333
+Training loss on iteration 260 = 0.0021552582467847968
+Training loss on iteration 280 = 0.0031117075155634665
+Training loss on iteration 300 = 0.005421231442778662
+Training loss on iteration 320 = 0.005804306764912326
+Training loss on iteration 340 = 0.0022137924439448397
+Training loss on iteration 360 = 0.005251734435205435
+### EVAL:: Epoch 4:: Loss = 0.0003685409386072602 :: ACC = 0.9998596031448895, AUC = 0.9999999737182975, EER = 9.359790340696369e-05
+Training on epoch 5
+Training loss on iteration 0 = 0.00013650521577801555
+Training loss on iteration 20 = 0.0008614277230662992
+Training loss on iteration 40 = 0.0020478769356486737
+Training loss on iteration 60 = 0.0003908116528691608
+Training loss on iteration 80 = 0.002663881228545506
+Training loss on iteration 100 = 0.0030917298359327107
+Training loss on iteration 120 = 0.002909157123394834
+Training loss on iteration 140 = 0.0025796438420002234
+Training loss on iteration 160 = 0.002133186137143639
+Training loss on iteration 180 = 0.0029059735214104878
+Training loss on iteration 200 = 0.0017709536756228771
+Training loss on iteration 220 = 0.0010209485851191858
+Training loss on iteration 240 = 0.0028058409927325554
+Training loss on iteration 260 = 0.003655044761762838
+Training loss on iteration 280 = 0.004941554458127939
+Training loss on iteration 300 = 0.003162158661507419
+Training loss on iteration 320 = 0.0021036230302343027
+Training loss on iteration 340 = 0.002595426827610936
+Training loss on iteration 360 = 0.0032624155574012548
+### EVAL:: Epoch 5:: Loss = 0.0005619371995664904 :: ACC = 0.9997660052414826, AUC = 0.9999998598309197, EER = 0.00028079371022089104
+Training on epoch 6
+Training loss on iteration 0 = 0.000982249854132533
+Training loss on iteration 20 = 0.0006691778978165531
+Training loss on iteration 40 = 0.0020401264814154272
+Training loss on iteration 60 = 0.0005892724552722939
+Training loss on iteration 80 = 0.0076760673362514355
+Training loss on iteration 100 = 0.0011233096397063492
+Training loss on iteration 120 = 0.0007606798133565462
+Training loss on iteration 140 = 0.0013392667684456682
+Training loss on iteration 160 = 0.004526989929217962
+Training loss on iteration 180 = 0.019581415769062006
+Training loss on iteration 200 = 0.0034607535038958304
+Training loss on iteration 220 = 0.0064580026744806675
+Training loss on iteration 240 = 0.0032925724372034892
+Training loss on iteration 260 = 0.004691894726420287
+Training loss on iteration 280 = 0.0016771816601249157
+Training loss on iteration 300 = 0.0013977966731545167
+Training loss on iteration 320 = 0.00043367543275962817
+Training loss on iteration 340 = 0.004012136673554778
+Training loss on iteration 360 = 0.004501509384135715
+### EVAL:: Epoch 6:: Loss = 0.0022594113264922753 :: ACC = 0.9992044178210409, AUC = 0.9999977222524442, EER = 0.00037439161362785476
+Training on epoch 7
+Training loss on iteration 0 = 0.003026797669008374
+Training loss on iteration 20 = 0.0006002252388043417
+Training loss on iteration 40 = 0.0009239380256985896
+Training loss on iteration 60 = 0.0015481179319976946
+Training loss on iteration 80 = 0.0014208239985237015
+Training loss on iteration 100 = 0.0018729982706645388
+Training loss on iteration 120 = 0.0011682811692026007
+Training loss on iteration 140 = 0.0020638095376853014
+Training loss on iteration 160 = 0.0046413089654379295
+Training loss on iteration 180 = 0.0027210500187720755
+Training loss on iteration 200 = 0.0028537706013594287
+Training loss on iteration 220 = 0.0007516819030570332
+Training loss on iteration 240 = 0.000565507734700077
+Training loss on iteration 260 = 0.0004227451913152436
+Training loss on iteration 280 = 0.00082071686620111
+Training loss on iteration 300 = 0.004258555511796658
+Training loss on iteration 320 = 0.0019345150045410263
+Training loss on iteration 340 = 0.0026597256986860885
+Training loss on iteration 360 = 0.002623362079657454
+### EVAL:: Epoch 7:: Loss = 0.0009775486391246364 :: ACC = 0.9997192062897791, AUC = 0.9999996670984342, EER = 0.00028079371022089104
+Training on epoch 8
+Training loss on iteration 0 = 0.0001299123978242278
+Training loss on iteration 20 = 0.001634914140413457
+Training loss on iteration 40 = 0.0006689183314847469
+Training loss on iteration 60 = 0.00019303550830045423
+Training loss on iteration 80 = 0.0034478784968086985
+Training loss on iteration 100 = 0.0007110644836757274
+Training loss on iteration 120 = 0.0017332720125523338
+Training loss on iteration 140 = 0.0025627398208598606
+Training loss on iteration 160 = 0.0007178468947358852
+Training loss on iteration 180 = 0.0002732230659603374
+Training loss on iteration 200 = 0.004038251935526205
+Training loss on iteration 220 = 0.005301189013698604
+Training loss on iteration 240 = 0.0014600440663343761
+Training loss on iteration 260 = 0.003394144008416333
+Training loss on iteration 280 = 0.005080243142219843
+Training loss on iteration 300 = 0.001492941128253733
+Training loss on iteration 320 = 0.0018518377246437012
+Training loss on iteration 340 = 0.0024768990087977727
+Training loss on iteration 360 = 0.0032978508417727424
+### EVAL:: Epoch 8:: Loss = 0.009228420699921266 :: ACC = 0.9968644702358667, AUC = 0.9999989312107623, EER = 0.0004679895170348184
+Training on epoch 9
+Training loss on iteration 0 = 0.0012904476607218385
+Training loss on iteration 20 = 0.005579043333818845
+Training loss on iteration 40 = 0.0026407765197291157
+Training loss on iteration 60 = 0.0015947883879562142
+Training loss on iteration 80 = 0.0006166757891151065
+Training loss on iteration 100 = 0.0005461442166847519
+Training loss on iteration 120 = 0.0015027988756173727
+Training loss on iteration 140 = 0.001416175714621204
+Training loss on iteration 160 = 0.0007739045282505686
+Training loss on iteration 180 = 0.0011453396640263235
+Training loss on iteration 200 = 0.0008012708627575194
+Training loss on iteration 220 = 0.0008261638161457085
+Training loss on iteration 240 = 0.001757674640020923
+Training loss on iteration 260 = 0.0007181087180470058
+Training loss on iteration 280 = 0.00015380320272697645
+Training loss on iteration 300 = 0.001972598048905638
+Training loss on iteration 320 = 0.0003731580128260248
+Training loss on iteration 340 = 0.0005291189535455487
+Training loss on iteration 360 = 0.00021442485372062946
+### EVAL:: Epoch 9:: Loss = 0.0009048020080828635 :: ACC = 0.9996256083863722, AUC = 0.9999999299154598, EER = 9.359790340696369e-05
+Training on epoch 10
+Training loss on iteration 0 = 0.0008298926986753941
+Training loss on iteration 20 = 0.0006407164862821446
+Training loss on iteration 40 = 0.0009304181450033866
+Training loss on iteration 60 = 0.0003632868320210036
+Training loss on iteration 80 = 0.00031844550419464214
+Training loss on iteration 100 = 0.0025147727585590474
+Training loss on iteration 120 = 0.00038463694957044934
+Training loss on iteration 140 = 0.0002583323858516451
+Training loss on iteration 160 = 0.00045471909290313307
+Training loss on iteration 180 = 0.0008753433194328864
+Training loss on iteration 200 = 0.0033933573194190104
+Training loss on iteration 220 = 0.0013190759456165324
+Training loss on iteration 240 = 0.0012183706759060441
+Training loss on iteration 260 = 0.002955003966189906
+Training loss on iteration 280 = 0.003568919773692869
+Training loss on iteration 300 = 0.003643990102864336
+Training loss on iteration 320 = 0.0032929303963555867
+Training loss on iteration 340 = 0.0036306050591520035
+Training loss on iteration 360 = 0.001625404568221711
+### EVAL:: Epoch 10:: Loss = 0.0006693308320704558 :: ACC = 0.9997660052414826, AUC = 0.9999998685914872, EER = 0.00018719580681392738
+Training on epoch 11
+Training loss on iteration 0 = 0.00023593220976181328
+Training loss on iteration 20 = 0.0007258202238517697
+Training loss on iteration 40 = 0.0023882057883383824
+Training loss on iteration 60 = 0.0005755353652602934
+Training loss on iteration 80 = 0.0010562051580109255
+Training loss on iteration 100 = 0.0035657760807225715
+Training loss on iteration 120 = 0.0032107554258800517
+Training loss on iteration 140 = 0.001936782610755472
+Training loss on iteration 160 = 0.0008122143439322826
+Training loss on iteration 180 = 0.0029660144527042577
+Training loss on iteration 200 = 0.0005808040196825459
+Training loss on iteration 220 = 0.0008621674875030294
+Training loss on iteration 240 = 0.0006203110559908964
+Training loss on iteration 260 = 0.001337143424416354
+Training loss on iteration 280 = 0.0006080644784560718
+Training loss on iteration 300 = 0.0006188388374766873
+Training loss on iteration 320 = 0.0012241291791269759
+Training loss on iteration 340 = 0.002152429138368461
+Training loss on iteration 360 = 0.0009075088212739501
+### EVAL:: Epoch 11:: Loss = 0.0006928653402555718 :: ACC = 0.9997192062897791, AUC = 0.9999998335492171, EER = 0.00028079371022089104
+Training on epoch 12
+Training loss on iteration 0 = 0.002099871402606368
+Training loss on iteration 20 = 0.0008000440857586
+Training loss on iteration 40 = 0.00033032442316880404
+Training loss on iteration 60 = 0.0025296749838844335
+Training loss on iteration 80 = 0.002000929469568291
+Training loss on iteration 100 = 0.0014624947391894238
+Training loss on iteration 120 = 0.0007327284746224905
+Training loss on iteration 140 = 0.008535612191553809
+Training loss on iteration 160 = 0.0025639081379267735
+Training loss on iteration 180 = 0.0052830040322078275
+Training loss on iteration 200 = 0.006777932156910538
+Training loss on iteration 220 = 0.0017452647351319684
+Training loss on iteration 240 = 0.0015384133173938607
+Training loss on iteration 260 = 0.0014244602140024653
+Training loss on iteration 280 = 0.001263546545351346
+Training loss on iteration 300 = 0.0005477656949096854
+Training loss on iteration 320 = 0.0005362989678587837
+Training loss on iteration 340 = 0.0005564895695783889
+Training loss on iteration 360 = 0.010004029522644942
+### EVAL:: Epoch 12:: Loss = 0.0028351814679923905 :: ACC = 0.9988768251591165, AUC = 0.9999996495772991, EER = 0.00018719580681392738
+Training on epoch 13
+Training loss on iteration 0 = 0.00029631974757649004
+Training loss on iteration 20 = 0.0010973409724101657
+Training loss on iteration 40 = 0.0032781896274400426
+Training loss on iteration 60 = 0.003118569757134537
+Training loss on iteration 80 = 0.0011792179047915852
+Training loss on iteration 100 = 0.0006819034756290421
+Training loss on iteration 120 = 0.0002248847486498562
+Training loss on iteration 140 = 0.0010241896172374255
+Training loss on iteration 160 = 0.0016124319236041629
+Training loss on iteration 180 = 0.0010798241713018796
+Training loss on iteration 200 = 0.0007352894421501332
+Training loss on iteration 220 = 0.0001723500288790092
+Training loss on iteration 240 = 0.0015471830963178946
+Training loss on iteration 260 = 0.0014423584987525828
+Training loss on iteration 280 = 0.0007209998233520309
+Training loss on iteration 300 = 0.00038284350653157163
+Training loss on iteration 320 = 0.001994149549727808
+Training loss on iteration 340 = 0.0007458339307049755
+Training loss on iteration 360 = 0.00044648831681115553
+### EVAL:: Epoch 13:: Loss = 0.0003846358971848111 :: ACC = 0.9998128041931861, AUC = 0.9999999474365949, EER = 0.00018719580681392738
+Training on epoch 14
+Training loss on iteration 0 = 0.00016009736282285303
+Training loss on iteration 20 = 0.0018471952552886251
+Training loss on iteration 40 = 0.0014848887341031513
+Training loss on iteration 60 = 0.00318152860745613
+Training loss on iteration 80 = 0.0032698924777832873
+Training loss on iteration 100 = 0.0030251368501467367
+Training loss on iteration 120 = 0.001333698279086093
+Training loss on iteration 140 = 0.002536808565537285
+Training loss on iteration 160 = 0.0010216450752977835
+Training loss on iteration 180 = 0.00033738838503722947
+Training loss on iteration 200 = 0.0001775444921804592
+Training loss on iteration 220 = 0.0004379771618914674
+Training loss on iteration 240 = 0.0012165156681930966
+Training loss on iteration 260 = 0.0037949682176986244
+Training loss on iteration 280 = 0.0009797189288747177
+Training loss on iteration 300 = 0.000507962796564243
+Training loss on iteration 320 = 0.001845017106825253
+Training loss on iteration 340 = 0.00027738605892864144
+Training loss on iteration 360 = 0.0010990818887421483
+### EVAL:: Epoch 14:: Loss = 0.0005335275190349063 :: ACC = 0.9998128041931861, AUC = 1.0, EER = 0.0
+Training on epoch 15
+Training loss on iteration 0 = 3.711174940690398e-05
+Training loss on iteration 20 = 0.0012581561781189522
+Training loss on iteration 40 = 0.0005963716230439787
+Training loss on iteration 60 = 0.000806304746151909
+Training loss on iteration 80 = 0.0010853260315911938
+Training loss on iteration 100 = 0.0012373365010660109
+Training loss on iteration 120 = 0.0005402531851245839
+Training loss on iteration 140 = 0.0016852059019441868
+Training loss on iteration 160 = 0.0006581192785915846
+Training loss on iteration 180 = 0.00021476558367226062
+Training loss on iteration 200 = 0.0015882895444789824
+Training loss on iteration 220 = 0.002196330085075715
+Training loss on iteration 240 = 0.0027321091016517586
+Training loss on iteration 260 = 0.002906538321985863
+Training loss on iteration 280 = 0.0005483438455485157
+Training loss on iteration 300 = 0.00015368905615105178
+Training loss on iteration 320 = 0.001239835067099193
+Training loss on iteration 340 = 0.0011875842677909532
+Training loss on iteration 360 = 0.001601798160254475
+### EVAL:: Epoch 15:: Loss = 0.0015222882416429937 :: ACC = 0.9997192062897791, AUC = 0.9999921855737702, EER = 0.00028079371022089104
+Training on epoch 16
+Training loss on iteration 0 = 1.4870756785967387e-05
+Training loss on iteration 20 = 0.004080601051828126
+Training loss on iteration 40 = 0.0017789588890082086
+Training loss on iteration 60 = 0.0019062006016611122
+Training loss on iteration 80 = 0.002442858642552892
+Training loss on iteration 100 = 0.0039243790358341355
+Training loss on iteration 120 = 0.0053919787540394285
+Training loss on iteration 140 = 0.0056041333005850905
+Training loss on iteration 160 = 0.001901238041864417
+Training loss on iteration 180 = 0.001409459258275092
+Training loss on iteration 200 = 0.0009334144077456586
+Training loss on iteration 220 = 0.0011026038665477244
+Training loss on iteration 240 = 0.0005289489617553045
+Training loss on iteration 260 = 0.0010751003456334729
+Training loss on iteration 280 = 0.0004587983951978458
+Training loss on iteration 300 = 0.001180142876378909
+Training loss on iteration 320 = 0.00020437507828319212
+Training loss on iteration 340 = 0.0015142100926254897
+Training loss on iteration 360 = 0.000936985970929527
+### EVAL:: Epoch 16:: Loss = 0.000101929547389076 :: ACC = 1.0, AUC = 1.0, EER = 0.0
+Training on epoch 17
+Training loss on iteration 0 = 4.010904740425758e-05
+Training loss on iteration 20 = 0.0007365220559393037
+Training loss on iteration 40 = 0.002906727871157955
+Training loss on iteration 60 = 0.0007177038072143204
+Training loss on iteration 80 = 0.001318285063143776
+Training loss on iteration 100 = 0.0018377296742528415
+Training loss on iteration 120 = 0.002662797994526045
+Training loss on iteration 140 = 0.0025913197441013837
+Training loss on iteration 160 = 0.0023352291746959962
+Training loss on iteration 180 = 0.00030346373636120917
+Training loss on iteration 200 = 0.00015473529064138347
+Training loss on iteration 220 = 0.00012762794935952115
+Training loss on iteration 240 = 0.00017639683003380923
+Training loss on iteration 260 = 0.00018226469719593297
+Training loss on iteration 280 = 0.0012056320691499422
+Training loss on iteration 300 = 0.0003272391279551812
+Training loss on iteration 320 = 0.000892948226498902
+Training loss on iteration 340 = 0.000912479391377019
+Training loss on iteration 360 = 0.0025142532527070217
+### EVAL:: Epoch 17:: Loss = 0.02443821129586377 :: ACC = 0.9942437289404717, AUC = 0.9999968023928544, EER = 0.0007487832272557095
+Training on epoch 18
+Training loss on iteration 0 = 4.632736090570688e-05
+Training loss on iteration 20 = 0.004227746829428725
+Training loss on iteration 40 = 0.0016858088207754919
+Training loss on iteration 60 = 0.0035993501024677243
+Training loss on iteration 80 = 0.0016465014329241968
+Training loss on iteration 100 = 0.0029141000356503353
+Training loss on iteration 120 = 0.0031378177984151987
+Training loss on iteration 140 = 0.0006388561474523158
+Training loss on iteration 160 = 0.0003951269668959867
+Training loss on iteration 180 = 0.001167787703616341
+Training loss on iteration 200 = 0.0021184606693395837
+Training loss on iteration 220 = 0.0016026920672629786
+Training loss on iteration 240 = 0.0027615848365542205
+Training loss on iteration 260 = 0.0006409904670363175
+Training loss on iteration 280 = 0.0019700491321714255
+Training loss on iteration 300 = 0.0008029468176118826
+Training loss on iteration 320 = 0.00044755847904980327
+Training loss on iteration 340 = 0.0007527787229804517
+Training loss on iteration 360 = 0.00010318267878801634
+### EVAL:: Epoch 18:: Loss = 1.1582421775763963e-05 :: ACC = 1.0, AUC = 1.0, EER = 0.0
+Training on epoch 19
+Training loss on iteration 0 = 0.00011076478403992951
+Training loss on iteration 20 = 0.0009889964630190207
+Training loss on iteration 40 = 0.007311846977336245
+Training loss on iteration 60 = 0.0032852737454959423
+Training loss on iteration 80 = 0.0026019468054073514
+Training loss on iteration 100 = 0.0019825805313303134
+Training loss on iteration 120 = 0.00048594556121770436
+Training loss on iteration 140 = 0.001480411335091958
+Training loss on iteration 160 = 0.0009319600299932063
+Training loss on iteration 180 = 0.001806750154173642
+Training loss on iteration 200 = 0.000695700764981666
+Training loss on iteration 220 = 0.0012397214249176614
+Training loss on iteration 240 = 0.0015526796924405061
+Training loss on iteration 260 = 0.0010146634628711126
+Training loss on iteration 280 = 0.0013023802593124857
+Training loss on iteration 300 = 0.00029001981497458475
+Training loss on iteration 320 = 9.968537610234307e-05
+Training loss on iteration 340 = 0.0006413109682512185
+Training loss on iteration 360 = 0.00022448329351618668
+### EVAL:: Epoch 19:: Loss = 0.0035199647230939584 :: ACC = 0.9992980157244478, AUC = 0.9999970214070424, EER = 0.00028079371022089104
+Training on epoch 20
+Training loss on iteration 0 = 0.0332159698009491
+Training loss on iteration 20 = 0.002095517432883298
+Training loss on iteration 40 = 0.0007111139249900589
+Training loss on iteration 60 = 0.0003790527852743253
+Training loss on iteration 80 = 0.00033043423267145047
+Training loss on iteration 100 = 0.0015890743821273645
+Training loss on iteration 120 = 0.0009163728706653273
+Training loss on iteration 140 = 0.001110777125450113
+Training loss on iteration 160 = 0.000540252209270875
+Training loss on iteration 180 = 0.00042054762303678217
+Training loss on iteration 200 = 0.00026566543170361003
+Training loss on iteration 220 = 0.0010975513787968793
+Training loss on iteration 240 = 0.001356471579265417
+Training loss on iteration 260 = 0.002109163121997426
+Training loss on iteration 280 = 0.004955506343685556
+Training loss on iteration 300 = 0.0010342717595449359
+Training loss on iteration 320 = 0.0009333900112324045
+Training loss on iteration 340 = 0.0006662954452167468
+Training loss on iteration 360 = 0.0005959785906725301
+### EVAL:: Epoch 20:: Loss = 0.00016214393263253905 :: ACC = 0.999906402096593, AUC = 1.0, EER = 0.0
+### Out of domain:: Best epoch 16 :: ACC = 0.4614512471655329, AUC = 0.4615812113037035, EER = 0.5744520030234316
+recorded: {'exp_name': 'en_resnet18_r03', 'model': 'resnet18', 'train': 'commonvoice-en', 'test': 'mailabs-en', 'in_acc': 1.0, 'in_auc': 1.0, 'in_eer': 0.0, 'cross_acc': 0.4614512471655329, 'cross_auc': 0.4615812113037035, 'cross_eer': 0.5744520030234316}
+
+Done. Results -> /project/home/p201284/guo/xmad-bench-repro/results_en_resnet18_r03.csv
+Done (en_resnet18_r03). Metrics -> /project/home/p201284/guo/xmad-bench-repro/results_en_resnet18_r03.csv ; logs/checkpoints under detection/experiments/.

@@ -1,0 +1,2 @@
+exp_name,model,train,test,in_acc,in_auc,in_eer,cross_acc,cross_auc,cross_eer
+ar_ast_r01,ast,commonvoice-ar,masc,0.9996583365872705,0.9999995616523405,0.0003904724716907458,0.7630930375847197,0.827054929731991,0.25092421441774493

@@ -1,0 +1,2 @@
+exp_name,model,train,test,in_acc,in_auc,in_eer,cross_acc,cross_auc,cross_eer
+ar_resnet18_r02,resnet18,commonvoice-ar,masc,1.0,1.0,0.0,0.30244916820702406,0.262208886220075,0.6957794208256316
