@@ -1,10 +1,19 @@
 #!/usr/bin/env python3
 """Generate ready-to-run config.json files for XMAD-Bench Step B.
 
-Per-language reproduction uses MULTILINGUAL mode with single-element lists.
-Why: the multilingual code path applies the correct CSV separator (TAB for
-commonvoice-en/ru and mailabs-en/ru, comma otherwise). The single-language
-path does NOT handle the tab separator, so it silently misreads those sets.
+Per-language reproduction uses MULTILINGUAL mode with single-element lists
+(it is the mode the repo's default config uses, and it applies the split filter
+consistently).
+
+CSV SEPARATOR — VERIFIED 2026-07, IMPORTANT:
+every meta.csv in the released data is COMMA-separated. The multilingual code
+path nevertheless hard-codes sep='\t' for commonvoice-en / commonvoice-ru
+(base_dataset.py) and mailabs-en / mailabs-ru (base_dataset_test.py). Those
+files then load as a single column and the next line raises KeyError:'is_fake'.
+=> English, Russian and the cross-lingual experiment CANNOT RUN as released
+   (18 of the 48 Table-3 cells). Apply the separator fix (see
+   CODE_FIXES_APPLIED.md, fix 7) before running those languages.
+German/Spanish/Romanian/Arabic/Mandarin are unaffected (comma path).
 
 IMPORTANT: the dataset FOLDER NAMES below are inferred from the paper (Table 1)
 and the repo's default config. Confirm them against the actual Google Drive
@@ -17,6 +26,9 @@ LANGS = {
     "ar": ("commonvoice-ar", "masc"),
     "en": ("commonvoice-en", "mailabs-en"),
     "de": ("commonvoice-de", "mailabs-de"),
+    # VERIFIED against the data on MeluXina: the folder is "aishell3" (no hyphen).
+    # An earlier local edit had "aishell-3", which fails preflight. The 12 completed
+    # Mandarin runs record 'test': 'aishell3'.
     "zh": ("commonvoice-zh", "aishell3"),
     "ro": ("commonvoice-ro", "voxpopuli"),
     "ru": ("commonvoice-ru", "mailabs-ru"),
@@ -96,7 +108,14 @@ def main(root_path="/path/to/data", out_dir="configs", langs=None, cross_lingual
         c["dataset"]["train_datasets"] = ["commonvoice-ar","commonvoice-de","commonvoice-ro","commonvoice-ru","commonvoice-es"]
         c["dataset"]["test_datasets"] = ["commonvoice-en","commonvoice-zh"]
         c["dataset"]["extract_samples"] = True
-        c["dataset"]["num_samples"] = 6000   # ~3000 real + 3000 fake per lang; confirm vs paper
+        # Paper 4.2: "we randomly select at most 3,000 samples per language" — ambiguous
+        # as to per-class or total. CONFIRMED 2026-07-21 (Yuejun Guo) as 3,000 in TOTAL,
+        # and verified against the loader: base_dataset.py samples num_samples//2 names
+        # from the REAL rows only, then re-filters on those names; because XMAD pairs
+        # real and fake under a shared sample_name, both members come back. So
+        # num_samples is already a total => 3000 gives ~1500 real + 1500 fake.
+        # (Only read when extract_samples is True, i.e. the cross-lingual configs.)
+        c["dataset"]["num_samples"] = 3000
         c["model_type"] = model
         c["batch_size"] = BATCH[model]
         c["exp_name"] = f"crosslingual_{model}"
