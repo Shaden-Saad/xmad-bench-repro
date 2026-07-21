@@ -1,0 +1,228 @@
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_crosslingual/config_crosslingual_ast.json
+
+  OK  commonvoice-ar       rows=76602    sep=','
+  OK  commonvoice-de       rows=14934    sep=','
+  OK  commonvoice-ro       rows=30820    sep=','
+  OK  commonvoice-ru       rows=67444    sep=','
+  OK  commonvoice-es       rows=12694    sep=','
+  OK  commonvoice-en       rows=96368    sep=','
+  OK  commonvoice-zh       rows=13776    sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+
+=== RUN crosslingual_ast_r01 (model=ast) ===
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights:   1%|          | 1/199 [00:00<00:44,  4.44it/s]
+Loading weights:   3%|▎         | 6/199 [00:00<00:10, 18.56it/s]
+Loading weights:   8%|▊         | 16/199 [00:00<00:04, 41.32it/s]
+Loading weights:  15%|█▍        | 29/199 [00:00<00:03, 51.57it/s]
+Loading weights:  25%|██▍       | 49/199 [00:00<00:01, 86.68it/s]
+Loading weights:  31%|███       | 61/199 [00:00<00:01, 91.23it/s]
+Loading weights:  42%|████▏     | 84/199 [00:01<00:00, 126.39it/s]
+Loading weights:  53%|█████▎    | 105/199 [00:01<00:00, 125.73it/s]
+Loading weights:  71%|███████▏  | 142/199 [00:01<00:00, 150.25it/s]
+Loading weights:  82%|████████▏ | 164/199 [00:01<00:00, 163.83it/s]
+Loading weights:  91%|█████████▏| 182/199 [00:01<00:00, 145.80it/s]
+Loading weights: 100%|██████████| 199/199 [00:01<00:00, 118.88it/s]
+[transformers] [1mASTModel LOAD REPORT[0m from: MIT/ast-finetuned-audioset-10-10-0.4593
+Key                         | Status     |  | 
+----------------------------+------------+--+-
+classifier.layernorm.weight | UNEXPECTED |  | 
+classifier.dense.weight     | UNEXPECTED |  | 
+classifier.layernorm.bias   | UNEXPECTED |  | 
+classifier.dense.bias       | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+/mnt/tier2/project/p201284/guo/xmad-bench-repro/venv/lib/python3.13/site-packages/transformers/audio_utils.py:704: UserWarning: At least one mel filter has all zero values. The value for `num_mel_filters` (128) may be set too high. Or, the value for `num_frequency_bins` (257) may be set too low.
+  warnings.warn(
+commonvoice-ar
+commonvoice-de
+commonvoice-ro
+commonvoice-ru
+commonvoice-es
+/mnt/tier2/project/p201284/guo/xmad-bench-repro/venv/lib/python3.13/site-packages/transformers/audio_utils.py:704: UserWarning: At least one mel filter has all zero values. The value for `num_mel_filters` (128) may be set too high. Or, the value for `num_frequency_bins` (257) may be set too low.
+  warnings.warn(
+commonvoice-ar
+commonvoice-de
+commonvoice-ro
+commonvoice-ru
+commonvoice-es
+Traceback (most recent call last):
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/main.py", line 50, in <module>
+    main()
+    ~~~~^^
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/main.py", line 41, in main
+    train_loader, validation_loader = data_manager.get_dataloaders(ast_proc)
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/data/data_manager.py", line 13, in get_dataloaders
+    test = BaseDataset(config=self.config, mode="test", ast_proc=ast_proc)
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/data/base_dataset.py", line 39, in __init__
+    self._process_multilingual_dataset()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/data/base_dataset.py", line 75, in _process_multilingual_dataset
+    sample_names = meta_real["sample_name"].sample(self.config["num_samples"] // 2)
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/venv/lib/python3.13/site-packages/pandas/core/generic.py", line 6000, in sample
+    sampled_indices = sample.sample(obj_len, size, replace, weights, rs)
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/venv/lib/python3.13/site-packages/pandas/core/sample.py", line 161, in sample
+    return random_state.choice(obj_len, size=size, replace=replace, p=weights).astype(
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "numpy/random/mtrand.pyx", line 1025, in numpy.random.mtrand.RandomState.choice
+ValueError: Cannot take a larger sample than population when 'replace=False'
+FAILED: crosslingual_ast_r01 (returncode=1)
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_crosslingual/config_crosslingual_ast.json
+
+  OK  commonvoice-ar       rows=76602    sep=','
+  OK  commonvoice-de       rows=14934    sep=','
+  OK  commonvoice-ro       rows=30820    sep=','
+  OK  commonvoice-ru       rows=67444    sep=','
+  OK  commonvoice-es       rows=12694    sep=','
+  OK  commonvoice-en       rows=96368    sep=','
+  OK  commonvoice-zh       rows=13776    sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+
+=== RUN crosslingual_ast_r02 (model=ast) ===
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights:   1%|          | 1/199 [00:00<00:41,  4.80it/s]
+Loading weights:   5%|▌         | 10/199 [00:00<00:06, 31.24it/s]
+Loading weights:  13%|█▎        | 26/199 [00:00<00:02, 69.91it/s]
+Loading weights:  20%|██        | 40/199 [00:00<00:01, 90.55it/s]
+Loading weights:  26%|██▌       | 52/199 [00:00<00:01, 93.35it/s]
+Loading weights:  39%|███▉      | 78/199 [00:00<00:01, 115.01it/s]
+Loading weights:  47%|████▋     | 93/199 [00:00<00:00, 123.64it/s]
+Loading weights:  53%|█████▎    | 106/199 [00:01<00:00, 119.66it/s]
+Loading weights:  60%|█████▉    | 119/199 [00:01<00:00, 115.28it/s]
+Loading weights:  69%|██████▉   | 137/199 [00:01<00:00, 127.92it/s]
+Loading weights:  76%|███████▋  | 152/199 [00:01<00:00, 123.99it/s]
+Loading weights:  83%|████████▎ | 165/199 [00:01<00:00, 112.45it/s]
+Loading weights: 100%|██████████| 199/199 [00:01<00:00, 121.97it/s]
+[transformers] [1mASTModel LOAD REPORT[0m from: MIT/ast-finetuned-audioset-10-10-0.4593
+Key                         | Status     |  | 
+----------------------------+------------+--+-
+classifier.layernorm.bias   | UNEXPECTED |  | 
+classifier.dense.weight     | UNEXPECTED |  | 
+classifier.layernorm.weight | UNEXPECTED |  | 
+classifier.dense.bias       | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+/mnt/tier2/project/p201284/guo/xmad-bench-repro/venv/lib/python3.13/site-packages/transformers/audio_utils.py:704: UserWarning: At least one mel filter has all zero values. The value for `num_mel_filters` (128) may be set too high. Or, the value for `num_frequency_bins` (257) may be set too low.
+  warnings.warn(
+commonvoice-ar
+commonvoice-de
+commonvoice-ro
+commonvoice-ru
+commonvoice-es
+/mnt/tier2/project/p201284/guo/xmad-bench-repro/venv/lib/python3.13/site-packages/transformers/audio_utils.py:704: UserWarning: At least one mel filter has all zero values. The value for `num_mel_filters` (128) may be set too high. Or, the value for `num_frequency_bins` (257) may be set too low.
+  warnings.warn(
+commonvoice-ar
+commonvoice-de
+commonvoice-ro
+commonvoice-ru
+commonvoice-es
+Traceback (most recent call last):
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/main.py", line 50, in <module>
+    main()
+    ~~~~^^
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/main.py", line 41, in main
+    train_loader, validation_loader = data_manager.get_dataloaders(ast_proc)
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/data/data_manager.py", line 13, in get_dataloaders
+    test = BaseDataset(config=self.config, mode="test", ast_proc=ast_proc)
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/data/base_dataset.py", line 39, in __init__
+    self._process_multilingual_dataset()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/data/base_dataset.py", line 75, in _process_multilingual_dataset
+    sample_names = meta_real["sample_name"].sample(self.config["num_samples"] // 2)
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/venv/lib/python3.13/site-packages/pandas/core/generic.py", line 6000, in sample
+    sampled_indices = sample.sample(obj_len, size, replace, weights, rs)
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/venv/lib/python3.13/site-packages/pandas/core/sample.py", line 161, in sample
+    return random_state.choice(obj_len, size=size, replace=replace, p=weights).astype(
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "numpy/random/mtrand.pyx", line 1025, in numpy.random.mtrand.RandomState.choice
+ValueError: Cannot take a larger sample than population when 'replace=False'
+FAILED: crosslingual_ast_r02 (returncode=1)
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_crosslingual/config_crosslingual_ast.json
+
+  OK  commonvoice-ar       rows=76602    sep=','
+  OK  commonvoice-de       rows=14934    sep=','
+  OK  commonvoice-ro       rows=30820    sep=','
+  OK  commonvoice-ru       rows=67444    sep=','
+  OK  commonvoice-es       rows=12694    sep=','
+  OK  commonvoice-en       rows=96368    sep=','
+  OK  commonvoice-zh       rows=13776    sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+
+=== RUN crosslingual_ast_r03 (model=ast) ===
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights:   1%|          | 1/199 [00:00<00:22,  8.69it/s]
+Loading weights:   1%|          | 2/199 [00:00<00:50,  3.89it/s]
+Loading weights:   8%|▊         | 15/199 [00:00<00:08, 20.64it/s]
+Loading weights:  17%|█▋        | 34/199 [00:01<00:05, 31.37it/s]
+Loading weights:  25%|██▌       | 50/199 [00:01<00:03, 40.99it/s]
+Loading weights:  37%|███▋      | 73/199 [00:01<00:01, 66.27it/s]
+Loading weights:  44%|████▎     | 87/199 [00:02<00:02, 55.19it/s]
+Loading weights:  48%|████▊     | 95/199 [00:02<00:02, 47.75it/s]
+Loading weights:  51%|█████▏    | 102/199 [00:02<00:02, 36.49it/s]
+Loading weights:  55%|█████▌    | 110/199 [00:02<00:02, 32.97it/s]
+Loading weights:  63%|██████▎   | 126/199 [00:03<00:01, 48.47it/s]
+Loading weights:  69%|██████▉   | 138/199 [00:03<00:01, 43.67it/s]
+Loading weights:  82%|████████▏ | 163/199 [00:03<00:00, 58.15it/s]
+Loading weights:  93%|█████████▎| 185/199 [00:04<00:00, 47.51it/s]
+Loading weights: 100%|██████████| 199/199 [00:04<00:00, 46.26it/s]
+[transformers] [1mASTModel LOAD REPORT[0m from: MIT/ast-finetuned-audioset-10-10-0.4593
+Key                         | Status     |  | 
+----------------------------+------------+--+-
+classifier.layernorm.bias   | UNEXPECTED |  | 
+classifier.layernorm.weight | UNEXPECTED |  | 
+classifier.dense.bias       | UNEXPECTED |  | 
+classifier.dense.weight     | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+/mnt/tier2/project/p201284/guo/xmad-bench-repro/venv/lib/python3.13/site-packages/transformers/audio_utils.py:704: UserWarning: At least one mel filter has all zero values. The value for `num_mel_filters` (128) may be set too high. Or, the value for `num_frequency_bins` (257) may be set too low.
+  warnings.warn(
+commonvoice-ar
+commonvoice-de
+commonvoice-ro
+commonvoice-ru
+commonvoice-es
+/mnt/tier2/project/p201284/guo/xmad-bench-repro/venv/lib/python3.13/site-packages/transformers/audio_utils.py:704: UserWarning: At least one mel filter has all zero values. The value for `num_mel_filters` (128) may be set too high. Or, the value for `num_frequency_bins` (257) may be set too low.
+  warnings.warn(
+commonvoice-ar
+commonvoice-de
+commonvoice-ro
+commonvoice-ru
+commonvoice-es
+Traceback (most recent call last):
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/main.py", line 50, in <module>
+    main()
+    ~~~~^^
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/main.py", line 41, in main
+    train_loader, validation_loader = data_manager.get_dataloaders(ast_proc)
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/data/data_manager.py", line 13, in get_dataloaders
+    test = BaseDataset(config=self.config, mode="test", ast_proc=ast_proc)
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/data/base_dataset.py", line 39, in __init__
+    self._process_multilingual_dataset()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/data/base_dataset.py", line 75, in _process_multilingual_dataset
+    sample_names = meta_real["sample_name"].sample(self.config["num_samples"] // 2)
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/venv/lib/python3.13/site-packages/pandas/core/generic.py", line 6000, in sample
+    sampled_indices = sample.sample(obj_len, size, replace, weights, rs)
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/venv/lib/python3.13/site-packages/pandas/core/sample.py", line 161, in sample
+    return random_state.choice(obj_len, size=size, replace=replace, p=weights).astype(
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "numpy/random/mtrand.pyx", line 1025, in numpy.random.mtrand.RandomState.choice
+ValueError: Cannot take a larger sample than population when 'replace=False'
+FAILED: crosslingual_ast_r03 (returncode=1)
+
+Done. Results -> /project/home/p201284/guo/xmad-bench-repro/results_crosslingual_ast.csv

@@ -1,0 +1,140 @@
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_crosslingual/config_crosslingual_resnet18.json
+
+  OK  commonvoice-ar       rows=76602    sep=','
+  OK  commonvoice-de       rows=14934    sep=','
+  OK  commonvoice-ro       rows=30820    sep=','
+  OK  commonvoice-ru       rows=67444    sep=','
+  OK  commonvoice-es       rows=12694    sep=','
+  OK  commonvoice-en       rows=96368    sep=','
+  OK  commonvoice-zh       rows=13776    sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+
+=== RUN crosslingual_resnet18_r01 (model=resnet18) ===
+commonvoice-ar
+commonvoice-de
+commonvoice-ro
+commonvoice-ru
+commonvoice-es
+commonvoice-ar
+commonvoice-de
+commonvoice-ro
+commonvoice-ru
+commonvoice-es
+Traceback (most recent call last):
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/main.py", line 50, in <module>
+    main()
+    ~~~~^^
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/main.py", line 41, in main
+    train_loader, validation_loader = data_manager.get_dataloaders(ast_proc)
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/data/data_manager.py", line 13, in get_dataloaders
+    test = BaseDataset(config=self.config, mode="test", ast_proc=ast_proc)
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/data/base_dataset.py", line 39, in __init__
+    self._process_multilingual_dataset()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/data/base_dataset.py", line 75, in _process_multilingual_dataset
+    sample_names = meta_real["sample_name"].sample(self.config["num_samples"] // 2)
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/venv/lib/python3.13/site-packages/pandas/core/generic.py", line 6000, in sample
+    sampled_indices = sample.sample(obj_len, size, replace, weights, rs)
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/venv/lib/python3.13/site-packages/pandas/core/sample.py", line 161, in sample
+    return random_state.choice(obj_len, size=size, replace=replace, p=weights).astype(
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "numpy/random/mtrand.pyx", line 1025, in numpy.random.mtrand.RandomState.choice
+ValueError: Cannot take a larger sample than population when 'replace=False'
+FAILED: crosslingual_resnet18_r01 (returncode=1)
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_crosslingual/config_crosslingual_resnet18.json
+
+  OK  commonvoice-ar       rows=76602    sep=','
+  OK  commonvoice-de       rows=14934    sep=','
+  OK  commonvoice-ro       rows=30820    sep=','
+  OK  commonvoice-ru       rows=67444    sep=','
+  OK  commonvoice-es       rows=12694    sep=','
+  OK  commonvoice-en       rows=96368    sep=','
+  OK  commonvoice-zh       rows=13776    sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+
+=== RUN crosslingual_resnet18_r02 (model=resnet18) ===
+commonvoice-ar
+commonvoice-de
+commonvoice-ro
+commonvoice-ru
+commonvoice-es
+commonvoice-ar
+commonvoice-de
+commonvoice-ro
+commonvoice-ru
+commonvoice-es
+Traceback (most recent call last):
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/main.py", line 50, in <module>
+    main()
+    ~~~~^^
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/main.py", line 41, in main
+    train_loader, validation_loader = data_manager.get_dataloaders(ast_proc)
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/data/data_manager.py", line 13, in get_dataloaders
+    test = BaseDataset(config=self.config, mode="test", ast_proc=ast_proc)
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/data/base_dataset.py", line 39, in __init__
+    self._process_multilingual_dataset()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/data/base_dataset.py", line 75, in _process_multilingual_dataset
+    sample_names = meta_real["sample_name"].sample(self.config["num_samples"] // 2)
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/venv/lib/python3.13/site-packages/pandas/core/generic.py", line 6000, in sample
+    sampled_indices = sample.sample(obj_len, size, replace, weights, rs)
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/venv/lib/python3.13/site-packages/pandas/core/sample.py", line 161, in sample
+    return random_state.choice(obj_len, size=size, replace=replace, p=weights).astype(
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "numpy/random/mtrand.pyx", line 1025, in numpy.random.mtrand.RandomState.choice
+ValueError: Cannot take a larger sample than population when 'replace=False'
+FAILED: crosslingual_resnet18_r02 (returncode=1)
+root_path: /project/home/p201284/guo/xmad_data/
+multilingual: True  model check for config: /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_crosslingual/config_crosslingual_resnet18.json
+
+  OK  commonvoice-ar       rows=76602    sep=','
+  OK  commonvoice-de       rows=14934    sep=','
+  OK  commonvoice-ro       rows=30820    sep=','
+  OK  commonvoice-ru       rows=67444    sep=','
+  OK  commonvoice-es       rows=12694    sep=','
+  OK  commonvoice-en       rows=96368    sep=','
+  OK  commonvoice-zh       rows=13776    sep=','
+
+PRE-FLIGHT PASSED — data layout looks correct for this config.
+
+=== RUN crosslingual_resnet18_r03 (model=resnet18) ===
+commonvoice-ar
+commonvoice-de
+commonvoice-ro
+commonvoice-ru
+commonvoice-es
+commonvoice-ar
+commonvoice-de
+commonvoice-ro
+commonvoice-ru
+commonvoice-es
+Traceback (most recent call last):
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/main.py", line 50, in <module>
+    main()
+    ~~~~^^
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/main.py", line 41, in main
+    train_loader, validation_loader = data_manager.get_dataloaders(ast_proc)
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/data/data_manager.py", line 13, in get_dataloaders
+    test = BaseDataset(config=self.config, mode="test", ast_proc=ast_proc)
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/data/base_dataset.py", line 39, in __init__
+    self._process_multilingual_dataset()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/detection/data/base_dataset.py", line 75, in _process_multilingual_dataset
+    sample_names = meta_real["sample_name"].sample(self.config["num_samples"] // 2)
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/venv/lib/python3.13/site-packages/pandas/core/generic.py", line 6000, in sample
+    sampled_indices = sample.sample(obj_len, size, replace, weights, rs)
+  File "/mnt/tier2/project/p201284/guo/xmad-bench-repro/venv/lib/python3.13/site-packages/pandas/core/sample.py", line 161, in sample
+    return random_state.choice(obj_len, size=size, replace=replace, p=weights).astype(
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "numpy/random/mtrand.pyx", line 1025, in numpy.random.mtrand.RandomState.choice
+ValueError: Cannot take a larger sample than population when 'replace=False'
+FAILED: crosslingual_resnet18_r03 (returncode=1)
+
+Done. Results -> /project/home/p201284/guo/xmad-bench-repro/results_crosslingual_resnet18.csv
