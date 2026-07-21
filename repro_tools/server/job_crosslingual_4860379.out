@@ -1,0 +1,21 @@
+>> env: /project/home/p201284/guo/xmad-bench-repro/venv  (Python 3.13.12)
+>> torch 2.12.0+cu132 | CUDA: True | GPUs: 4
+Applying resumable-training patch...
+  already patched: /project/home/p201284/guo/xmad-bench-repro/detection/trainer.py
+  trainer.py is valid Python.
+Done. Killed runs now continue from their last completed epoch.
+>> generating configs (all 7 languages in ONE call)
+Wrote 32 configs to /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_all_xling/  (languages: ar, en, de, zh, ro, ru, es; + cross-lingual)
+>> isolated 4 cross-lingual configs in /project/home/p201284/guo/xmad-bench-repro/repro_tools/stepB/configs_crosslingual
+>> sanity: train=['commonvoice-ar', 'commonvoice-de', 'commonvoice-ro', 'commonvoice-ru', 'commonvoice-es']
+>>         test =['commonvoice-en', 'commonvoice-zh']
+>>         extract_samples=True  num_samples=3000   (expect 3000 => ~1500 real + 1500 fake per language)
+>> GPU 0 : crosslingual / resnet18 / 3 repeats -> results_crosslingual_resnet18.csv
+>> GPU 1 : crosslingual / resnet50 / 3 repeats -> results_crosslingual_resnet50.csv
+>> GPU 2 : crosslingual / septr / 3 repeats -> results_crosslingual_septr.csv
+>> GPU 3 : crosslingual / ast / 3 repeats -> results_crosslingual_ast.csv
+
+All cross-lingual runs finished.
+Metrics -> /project/home/p201284/guo/xmad-bench-repro/results_crosslingual_*.csv
+Logs    -> /project/home/p201284/guo/xmad-bench-repro/job_crosslingual_*.log
+Completed runs (expect 12): 0
