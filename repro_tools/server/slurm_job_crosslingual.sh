@@ -88,6 +88,14 @@ grep -q "CONFIG_PATH" "$REPO/detection/main.py" || \
   sed -i "s|json.load(open('./config.json'))|json.load(open(os.environ.get('CONFIG_PATH','./config.json')))|" "$REPO/detection/main.py"
 python "$REPO/repro_tools/fix_resume_training.py" "$REPO" || {
   echo "ERROR: could not apply the resumable-training patch."; exit 1; }
+#  (d) "at most N samples per language" (paper 4.2). pandas .sample(n) RAISES rather
+#      than capping when n exceeds the population, and the pool is one SPLIT of one
+#      language — the val split of the smaller languages is below the budget. Without
+#      this, every cross-lingual run dies while building the validation loader
+#      (observed 2026-07-21: all 12 runs, ValueError). No effect when the population
+#      is sufficient, so no completed result is touched.
+python "$REPO/repro_tools/fix_at_most_sampling.py" "$REPO" || {
+  echo "ERROR: could not apply the at-most sampling patch."; exit 1; }
 
 # ---------------------------------------------------------------------------
 # 1. Generate configs. ALL SEVEN languages must be in one call or the cross-lingual
