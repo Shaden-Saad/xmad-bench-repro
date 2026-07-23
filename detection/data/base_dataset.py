@@ -72,7 +72,17 @@ class BaseDataset(torch.utils.data.Dataset):
 
             if self.config["extract_samples"]:
                 meta_real = meta_aux[meta_aux['is_fake']==0]
-                sample_names = meta_real["sample_name"].sample(self.config["num_samples"] // 2)
+                # [repro] 'at most' sampling: the paper says "at most N samples per language" (4.2), and
+                # "at most" is min(requested, available). pandas .sample(n) raises
+                # instead of capping, and the pool here is one SPLIT of one language,
+                # which for val is smaller than the budget. Cap it.
+                _n_want = self.config["num_samples"] // 2
+                _n_avail = len(meta_real)
+                if _n_want > _n_avail:
+                    print(f"  [at-most] {dataset}: requested {_n_want} real samples, "
+                          f"only {_n_avail} available in this split - using {_n_avail}",
+                          flush=True)
+                sample_names = meta_real["sample_name"].sample(min(_n_want, _n_avail))
                 meta_aux = meta_aux[meta_aux["sample_name"].isin(sample_names)]
 
             metas.append(meta_aux)

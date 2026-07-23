@@ -1,1 +1,4 @@
 exp_name,model,train,test,in_acc,in_auc,in_eer,cross_acc,cross_auc,cross_eer
+crosslingual_septr_r01,septr,"commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es","commonvoice-en,commonvoice-zh",0.9508346191611726,0.8998550862400088,0.18740356291204938,0.9396666666666667,0.879579,0.21366666666666667
+crosslingual_septr_r02,septr,"commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es","commonvoice-en,commonvoice-zh",0.9315472015710479,0.9587706195748467,0.10744844999298639,0.915,0.9579556666666666,0.11066666666666666
+crosslingual_septr_r03,septr,"commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es","commonvoice-en,commonvoice-zh",0.9649319680179548,0.9945257075483348,0.035208304109973346,0.9476666666666667,0.9910733333333334,0.049

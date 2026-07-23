@@ -1,1 +1,4 @@
 exp_name,model,train,test,in_acc,in_auc,in_eer,cross_acc,cross_auc,cross_eer
+crosslingual_resnet18_r01,resnet18,"commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es","commonvoice-en,commonvoice-zh",0.9995791836162154,0.9999995671220628,0.00042081638378454203,0.9976666666666667,0.9999754444444444,0.0016666666666666668
+crosslingual_resnet18_r02,resnet18,"commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es","commonvoice-en,commonvoice-zh",0.9999298639360359,1.0,0.0,0.9991666666666666,0.9999872222222222,0.0006666666666666666
+crosslingual_resnet18_r03,resnet18,"commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es","commonvoice-en,commonvoice-zh",0.9998597278720718,0.9999999606474603,0.00028054425585636136,0.9995,0.9999986666666666,0.0006666666666666666
