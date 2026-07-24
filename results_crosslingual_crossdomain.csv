@@ -1,0 +1,13 @@
+exp_name,model,train,test,cross_acc,cross_auc,cross_eer
+crosslingual_resnet18_r01,resnet18,"commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es","mailabs-en,aishell3",0.8434626149540184,0.9364420565240517,0.14274290283886445
+crosslingual_resnet18_r02,resnet18,"commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es","mailabs-en,aishell3",0.9002399040383846,0.9511179934263799,0.11915233906437425
+crosslingual_resnet18_r03,resnet18,"commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es","mailabs-en,aishell3",0.8774490203918432,0.9409034466980899,0.13194722111155538
+crosslingual_resnet50_r01,resnet50,"commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es","mailabs-en,aishell3",0.8878448620551779,0.952401926074832,0.11435425829668133
+crosslingual_resnet50_r02,resnet50,"commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es","mailabs-en,aishell3",0.9012395041983207,0.9607109575202306,0.10675729708116753
+crosslingual_resnet50_r03,resnet50,"commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es","mailabs-en,aishell3",0.9362255097960815,0.9737231057197272,0.07516993202718912
+crosslingual_septr_r01,septr,"commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es","mailabs-en,aishell3",0.7327069172331068,0.7472954840454861,0.3210715713714514
+crosslingual_septr_r02,septr,"commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es","mailabs-en,aishell3",0.757297081167533,0.8291773254712509,0.23990403838464613
+crosslingual_septr_r03,septr,"commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es","mailabs-en,aishell3",0.6681327469012395,0.7601979600003261,0.2998800479808077
+crosslingual_ast_r01,ast,"commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es","mailabs-en,aishell3",0.8486605357856857,0.9246839448946532,0.14714114354258298
+crosslingual_ast_r02,ast,"commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es","mailabs-en,aishell3",0.8266693322670932,0.9068356663731948,0.1635345861655338
+crosslingual_ast_r03,ast,"commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es","mailabs-en,aishell3",0.8540583766493403,0.9332976925183546,0.13914434226309477

@@ -1,0 +1,105 @@
+>> env: /project/home/p201284/guo/xmad-bench-repro/venv  (Python 3.13.12)
+>> torch 2.12.0+cu132 | CUDA: True
+>> === crosslingual_resnet18_r01 on mailabs-en,aishell3 ===
+  [at-most] aishell3: requested 1500 real samples, only 1001 available in this split - using 1001
+>> scoring crosslingual_resnet18_r01 (resnet18) on ['mailabs-en', 'aishell3'] [inference only, no training]
+### Out of domain:: Best epoch 8 :: ACC = 0.8434626149540184, AUC = 0.9364420565240517, EER = 0.14274290283886445
+recorded: {'exp_name': 'crosslingual_resnet18_r01', 'model': 'resnet18', 'train': 'commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es', 'test': 'mailabs-en,aishell3', 'cross_acc': 0.8434626149540184, 'cross_auc': 0.9364420565240517, 'cross_eer': 0.14274290283886445}
+>> === crosslingual_resnet18_r02 on mailabs-en,aishell3 ===
+  [at-most] aishell3: requested 1500 real samples, only 1001 available in this split - using 1001
+>> scoring crosslingual_resnet18_r02 (resnet18) on ['mailabs-en', 'aishell3'] [inference only, no training]
+### Out of domain:: Best epoch 11 :: ACC = 0.9002399040383846, AUC = 0.9511179934263799, EER = 0.11915233906437425
+recorded: {'exp_name': 'crosslingual_resnet18_r02', 'model': 'resnet18', 'train': 'commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es', 'test': 'mailabs-en,aishell3', 'cross_acc': 0.9002399040383846, 'cross_auc': 0.9511179934263799, 'cross_eer': 0.11915233906437425}
+>> === crosslingual_resnet18_r03 on mailabs-en,aishell3 ===
+  [at-most] aishell3: requested 1500 real samples, only 1001 available in this split - using 1001
+>> scoring crosslingual_resnet18_r03 (resnet18) on ['mailabs-en', 'aishell3'] [inference only, no training]
+### Out of domain:: Best epoch 16 :: ACC = 0.8774490203918432, AUC = 0.9409034466980899, EER = 0.13194722111155538
+recorded: {'exp_name': 'crosslingual_resnet18_r03', 'model': 'resnet18', 'train': 'commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es', 'test': 'mailabs-en,aishell3', 'cross_acc': 0.8774490203918432, 'cross_auc': 0.9409034466980899, 'cross_eer': 0.13194722111155538}
+>> === crosslingual_resnet50_r01 on mailabs-en,aishell3 ===
+  [at-most] aishell3: requested 1500 real samples, only 1001 available in this split - using 1001
+>> scoring crosslingual_resnet50_r01 (resnet50) on ['mailabs-en', 'aishell3'] [inference only, no training]
+### Out of domain:: Best epoch 9 :: ACC = 0.8878448620551779, AUC = 0.952401926074832, EER = 0.11435425829668133
+recorded: {'exp_name': 'crosslingual_resnet50_r01', 'model': 'resnet50', 'train': 'commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es', 'test': 'mailabs-en,aishell3', 'cross_acc': 0.8878448620551779, 'cross_auc': 0.952401926074832, 'cross_eer': 0.11435425829668133}
+>> === crosslingual_resnet50_r02 on mailabs-en,aishell3 ===
+  [at-most] aishell3: requested 1500 real samples, only 1001 available in this split - using 1001
+>> scoring crosslingual_resnet50_r02 (resnet50) on ['mailabs-en', 'aishell3'] [inference only, no training]
+### Out of domain:: Best epoch 12 :: ACC = 0.9012395041983207, AUC = 0.9607109575202306, EER = 0.10675729708116753
+recorded: {'exp_name': 'crosslingual_resnet50_r02', 'model': 'resnet50', 'train': 'commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es', 'test': 'mailabs-en,aishell3', 'cross_acc': 0.9012395041983207, 'cross_auc': 0.9607109575202306, 'cross_eer': 0.10675729708116753}
+>> === crosslingual_resnet50_r03 on mailabs-en,aishell3 ===
+  [at-most] aishell3: requested 1500 real samples, only 1001 available in this split - using 1001
+>> scoring crosslingual_resnet50_r03 (resnet50) on ['mailabs-en', 'aishell3'] [inference only, no training]
+### Out of domain:: Best epoch 16 :: ACC = 0.9362255097960815, AUC = 0.9737231057197272, EER = 0.07516993202718912
+recorded: {'exp_name': 'crosslingual_resnet50_r03', 'model': 'resnet50', 'train': 'commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es', 'test': 'mailabs-en,aishell3', 'cross_acc': 0.9362255097960815, 'cross_auc': 0.9737231057197272, 'cross_eer': 0.07516993202718912}
+>> === crosslingual_septr_r01 on mailabs-en,aishell3 ===
+  [at-most] aishell3: requested 1500 real samples, only 1001 available in this split - using 1001
+>> scoring crosslingual_septr_r01 (septr) on ['mailabs-en', 'aishell3'] [inference only, no training]
+### Out of domain:: Best epoch 9 :: ACC = 0.7327069172331068, AUC = 0.7472954840454861, EER = 0.3210715713714514
+recorded: {'exp_name': 'crosslingual_septr_r01', 'model': 'septr', 'train': 'commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es', 'test': 'mailabs-en,aishell3', 'cross_acc': 0.7327069172331068, 'cross_auc': 0.7472954840454861, 'cross_eer': 0.3210715713714514}
+>> === crosslingual_septr_r02 on mailabs-en,aishell3 ===
+  [at-most] aishell3: requested 1500 real samples, only 1001 available in this split - using 1001
+>> scoring crosslingual_septr_r02 (septr) on ['mailabs-en', 'aishell3'] [inference only, no training]
+### Out of domain:: Best epoch 10 :: ACC = 0.757297081167533, AUC = 0.8291773254712509, EER = 0.23990403838464613
+recorded: {'exp_name': 'crosslingual_septr_r02', 'model': 'septr', 'train': 'commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es', 'test': 'mailabs-en,aishell3', 'cross_acc': 0.757297081167533, 'cross_auc': 0.8291773254712509, 'cross_eer': 0.23990403838464613}
+>> === crosslingual_septr_r03 on mailabs-en,aishell3 ===
+  [at-most] aishell3: requested 1500 real samples, only 1001 available in this split - using 1001
+>> scoring crosslingual_septr_r03 (septr) on ['mailabs-en', 'aishell3'] [inference only, no training]
+### Out of domain:: Best epoch 3 :: ACC = 0.6681327469012395, AUC = 0.7601979600003261, EER = 0.2998800479808077
+recorded: {'exp_name': 'crosslingual_septr_r03', 'model': 'septr', 'train': 'commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es', 'test': 'mailabs-en,aishell3', 'cross_acc': 0.6681327469012395, 'cross_auc': 0.7601979600003261, 'cross_eer': 0.2998800479808077}
+>> === crosslingual_ast_r01 on mailabs-en,aishell3 ===
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:   1%|          | 1/199 [00:00<00:26,  7.55it/s]Loading weights:  11%|█         | 22/199 [00:00<00:01, 98.52it/s]Loading weights:  21%|██        | 41/199 [00:00<00:01, 123.03it/s]Loading weights:  29%|██▉       | 58/199 [00:00<00:01, 131.97it/s]Loading weights:  45%|████▍     | 89/199 [00:00<00:00, 183.58it/s]Loading weights:  60%|█████▉    | 119/199 [00:00<00:00, 209.84it/s]Loading weights:  71%|███████   | 141/199 [00:00<00:00, 182.97it/s]Loading weights:  81%|████████  | 161/199 [00:01<00:00, 162.29it/s]Loading weights:  89%|████████▉ | 178/199 [00:01<00:00, 151.72it/s]Loading weights: 100%|██████████| 199/199 [00:01<00:00, 168.68it/s]
+[transformers] [1mASTModel LOAD REPORT[0m from: MIT/ast-finetuned-audioset-10-10-0.4593
+Key                         | Status     |  | 
+----------------------------+------------+--+-
+classifier.layernorm.bias   | UNEXPECTED |  | 
+classifier.layernorm.weight | UNEXPECTED |  | 
+classifier.dense.bias       | UNEXPECTED |  | 
+classifier.dense.weight     | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+/mnt/tier2/project/p201284/guo/xmad-bench-repro/venv/lib/python3.13/site-packages/transformers/audio_utils.py:704: UserWarning: At least one mel filter has all zero values. The value for `num_mel_filters` (128) may be set too high. Or, the value for `num_frequency_bins` (257) may be set too low.
+  warnings.warn(
+  [at-most] aishell3: requested 1500 real samples, only 1001 available in this split - using 1001
+>> scoring crosslingual_ast_r01 (ast) on ['mailabs-en', 'aishell3'] [inference only, no training]
+### Out of domain:: Best epoch 18 :: ACC = 0.8486605357856857, AUC = 0.9246839448946532, EER = 0.14714114354258298
+recorded: {'exp_name': 'crosslingual_ast_r01', 'model': 'ast', 'train': 'commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es', 'test': 'mailabs-en,aishell3', 'cross_acc': 0.8486605357856857, 'cross_auc': 0.9246839448946532, 'cross_eer': 0.14714114354258298}
+>> === crosslingual_ast_r02 on mailabs-en,aishell3 ===
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:   1%|          | 1/199 [00:00<00:23,  8.59it/s]Loading weights:   7%|▋         | 14/199 [00:00<00:02, 73.81it/s]Loading weights:  18%|█▊        | 36/199 [00:00<00:01, 121.10it/s]Loading weights:  26%|██▌       | 51/199 [00:00<00:01, 118.90it/s]Loading weights:  36%|███▌      | 72/199 [00:00<00:00, 135.03it/s]Loading weights:  55%|█████▌    | 110/199 [00:00<00:00, 198.61it/s]Loading weights:  71%|███████▏  | 142/199 [00:00<00:00, 233.12it/s]Loading weights:  84%|████████▍ | 167/199 [00:00<00:00, 206.77it/s]Loading weights: 100%|██████████| 199/199 [00:01<00:00, 187.37it/s]
+[transformers] [1mASTModel LOAD REPORT[0m from: MIT/ast-finetuned-audioset-10-10-0.4593
+Key                         | Status     |  | 
+----------------------------+------------+--+-
+classifier.layernorm.weight | UNEXPECTED |  | 
+classifier.dense.weight     | UNEXPECTED |  | 
+classifier.dense.bias       | UNEXPECTED |  | 
+classifier.layernorm.bias   | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+/mnt/tier2/project/p201284/guo/xmad-bench-repro/venv/lib/python3.13/site-packages/transformers/audio_utils.py:704: UserWarning: At least one mel filter has all zero values. The value for `num_mel_filters` (128) may be set too high. Or, the value for `num_frequency_bins` (257) may be set too low.
+  warnings.warn(
+  [at-most] aishell3: requested 1500 real samples, only 1001 available in this split - using 1001
+>> scoring crosslingual_ast_r02 (ast) on ['mailabs-en', 'aishell3'] [inference only, no training]
+### Out of domain:: Best epoch 15 :: ACC = 0.8266693322670932, AUC = 0.9068356663731948, EER = 0.1635345861655338
+recorded: {'exp_name': 'crosslingual_ast_r02', 'model': 'ast', 'train': 'commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es', 'test': 'mailabs-en,aishell3', 'cross_acc': 0.8266693322670932, 'cross_auc': 0.9068356663731948, 'cross_eer': 0.1635345861655338}
+>> === crosslingual_ast_r03 on mailabs-en,aishell3 ===
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:   1%|          | 1/199 [00:00<00:24,  8.08it/s]Loading weights:  10%|█         | 20/199 [00:00<00:01, 103.12it/s]Loading weights:  20%|█▉        | 39/199 [00:00<00:01, 133.49it/s]Loading weights:  28%|██▊       | 56/199 [00:00<00:00, 145.86it/s]Loading weights:  40%|████      | 80/199 [00:00<00:00, 153.72it/s]Loading weights:  54%|█████▍    | 107/199 [00:00<00:00, 177.67it/s]Loading weights:  67%|██████▋   | 134/199 [00:00<00:00, 197.54it/s]Loading weights:  77%|███████▋  | 154/199 [00:00<00:00, 184.81it/s]Loading weights: 100%|██████████| 199/199 [00:01<00:00, 193.74it/s]
+[transformers] [1mASTModel LOAD REPORT[0m from: MIT/ast-finetuned-audioset-10-10-0.4593
+Key                         | Status     |  | 
+----------------------------+------------+--+-
+classifier.dense.bias       | UNEXPECTED |  | 
+classifier.layernorm.bias   | UNEXPECTED |  | 
+classifier.dense.weight     | UNEXPECTED |  | 
+classifier.layernorm.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+/mnt/tier2/project/p201284/guo/xmad-bench-repro/venv/lib/python3.13/site-packages/transformers/audio_utils.py:704: UserWarning: At least one mel filter has all zero values. The value for `num_mel_filters` (128) may be set too high. Or, the value for `num_frequency_bins` (257) may be set too low.
+  warnings.warn(
+  [at-most] aishell3: requested 1500 real samples, only 1001 available in this split - using 1001
+>> scoring crosslingual_ast_r03 (ast) on ['mailabs-en', 'aishell3'] [inference only, no training]
+### Out of domain:: Best epoch 16 :: ACC = 0.8540583766493403, AUC = 0.9332976925183546, EER = 0.13914434226309477
+recorded: {'exp_name': 'crosslingual_ast_r03', 'model': 'ast', 'train': 'commonvoice-ar,commonvoice-de,commonvoice-ro,commonvoice-ru,commonvoice-es', 'test': 'mailabs-en,aishell3', 'cross_acc': 0.8540583766493403, 'cross_auc': 0.9332976925183546, 'cross_eer': 0.13914434226309477}
+
+Done. Cross-domain cross-lingual scores -> /project/home/p201284/guo/xmad-bench-repro/results_crosslingual_crossdomain.csv
+Rows recorded (expect 12): 12
+Push it:  git add -A && git commit -m 'crosslingual cross-domain eval' && git push
